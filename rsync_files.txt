@@ -1,0 +1,10 @@
++ */
++ *.html
++ *.pdf
++ *.png
++ *.jpeg
++ *.jpg
++ *_ejemplo.cs
++ *_caso_de_estudio.zip
++ *.svg
+- *
