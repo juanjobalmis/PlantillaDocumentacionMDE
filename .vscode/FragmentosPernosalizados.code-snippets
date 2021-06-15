@@ -1,0 +1,273 @@
+{
+	// Place your programacioniesbalmis workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example: 
+	"Front Matter YAML": {
+		"scope": "markdown, md",
+		"prefix": "mde_frontMatter",
+		"body": [
+			"---",
+			"title:",
+			"\t${1:titulo}",
+			"date: ${2:fecha}",
+			"export_on_save:",
+			"\tpuppeteer: true",
+			"\thtml: true",
+			"puppeteer:",
+			"\tscale: 1",
+			"\tlandscape: false",
+			"\tformat: \"A4\"",
+			"\tprintBackground: true",
+			"\tmargin:",
+			"\t\ttop: \"1cm\"",
+			"\t\tright: \"1cm\"",
+			"\t\tbottom: \"2.5cm\"",
+			"\t\tleft: \"1cm\"",
+			"\tdisplayHeaderFooter: true",
+			"\theaderTemplate: \"&nbsp;\"",
+			"\tfooterTemplate: \"",
+			"\t<span style=\\\"font-size: 9pt; display: flex;\\\">",
+			"\t\t<span class=\\\"pageNumber\\\" style=\\\"margin-left: 1cm;\\\"></span>",
+			"\t\t/",
+			"\t\t<span class=\\\"totalPages\\\"></span>",
+			"\t\t<span class=\\\"title\\\" style=\\\"margin-left: 1cm;\\\"></span>",
+			"\t\t<span style=\\\"margin-left: 1cm;\\\">Aquí el autor o autores</span>",
+			"\t</span>",
+			"\t\"",
+			"toc:",
+			"\tdepth_from: 1",
+			"\tdepth_to: 5",
+			"\tordered: true",
+			"---",
+			"",
+			"# ${3:título_documento} {ignore=true}",
+			"",
+			"[Descargar estos apuntes](./${4:nombre_fichero}.pdf)",
+			"",
+			"## Índice {ignore=true}",
+			"",
+			"[TOC]",
+			"",
+			"<div style=\\\"page-break-after:always;\\\"></div>",
+		],
+		"description": "Front Matter YAML"
+	},
+	"Imegen centrada en HTML": {
+		"scope": "markdown, md",
+		"prefix": "mde_imagenCentrada",
+		"body": [
+			"<div align=\"center\">",
+			"\t<img height=\"$1\" src=\"$2\">",
+			"</div>"
+		],
+		"description": "Imegen centrada en HTML"
+	},
+	"Salto de página en pdf": {
+		"scope": "markdown, md",
+		"prefix": "mde_saltoPagina",
+		"body": [
+			"<div style=\"page-break-after:always;\"></div>"
+		],
+		"description": "markdown, md"
+	},
+	"Cita autor HTML": {
+		"scope": "markdown, md",
+		"prefix": "mde_citaCentrada",
+		"body": [
+			"<div class=\"contenedor\">",
+			"\t<div class=\"fondo\">",
+			"\t\t<div class=\"abre_comilla\">\"</div>",
+			"\t\t<div class=\"cierra_comilla\">\"</div>",
+			"\t\t<div class=\"cita\">$1.</div>",
+			"\t\t<div class=\"autor\">- $2</div>",
+			"\t</div>",
+			"</div>"
+		],
+		"description": "Cita autor HTML"
+	},
+	"Fondo color texto": {
+		"scope": "markdown, md",
+		"prefix": "mde_fondoColorTexto",
+		"body": [
+			"<div style=\"padding: 3pt; background-color: DarkSlateBlue; color: White; margin: 5pt 0pt 5pt 0pt;\">$1.</div>"
+		],
+		"description": "Color de fondo para un texto"
+	},
+	"Color texto": {
+		"scope": "markdown, md",
+		"prefix": "mde_colorTexto",
+		"body": [
+			"<span style=\"color: DarkSlateBlue; font-weight: bold;\">$1</span>"
+		],
+		"description": "Color para texto"
+	},
+	"Por hacer": {
+		"scope": "markdown, md",
+		"prefix": "mde_TODO",
+		"body": [
+			"<!--TODO: $1 -->"
+		],
+		"description": "Comentario con contenido por hacer-"
+	},	
+	"Código CSharp": {
+		"scope": "markdown, md",
+		"prefix": "mde_bloque_C#",
+		"body": [
+			"```csharp",
+			"string AYUDA = \"csharp{.line-numbers} para numerar las líneas.\" +",
+			"               \"csharp{highlight=2} para resaltar la línea 2\" +",
+			"               \"csharp{highlight=[2,5-7]} para resaltar la 2 y de la 5 a la 7\" +",
+			"               \"csharp{highlight=1; .line-numbers} para hacer ambas cosas\";",
+			"```"
+		],
+		"description": "Bloque en C#"
+	},
+	"Clases PlantUML": {
+		"scope": "markdown, md",
+		"prefix": "mde_bloque_puml_clases",
+		"body": [
+			"```puml {align=\"center\", style=\"zoom:1\"}",
+			"@startuml",
+			"skinparam classAttributeIconSize 0",
+			"skinparam ArrowColor Black",
+			"skinparam PackageBackgroundColor WhiteSmoke",
+			"skinparam ClassBorderColor Black",
+			"skinparam ClassBackgroundColor Snow",
+			"",
+			"$1",
+			"",
+			"@enduml",
+			"```"
+		],
+		"description": "Bloque puml"
+	},
+	"MindMap PlantUML": {
+		"scope": "markdown, md, puml",
+		"prefix": "mde_bloque_puml_mindMap",
+		"body": [
+			"```puml {align=\"center\", style=\"zoom:1\"}",
+			"@startmindmap",
+			"<style>",
+			"  mindmapDiagram {",
+			"    Linecolor black",
+			"    FontName Arial",
+			"    FontSize 14",
+			"    node {",
+			"            Padding 15",
+			"            Margin 15",
+			"            HorizontalAlignment center",
+			"            BackGroundColor white",
+			"         }",
+			"  }",
+			"</style>",
+			"",
+			"*[#snow] Debian",
+			"** Ubuntu",
+			"*** Linux Mint",
+			"*** Kubuntu",
+			"*** KDE Neon",
+			"** SteamOS",
+			"",
+			"@endmindmap",
+			"```"
+		],
+		"description": "Insertar un mapa mental"
+	},
+	"Importante": {
+		"scope": "markdown, md",
+		"prefix": "mde_cita_importante",
+		"body": [
+			"> :hand: **Importante:**",
+			"> ",
+			"> $1",
+			"> "
+		],
+		"description": "Cita con algo importante"
+	},
+	"Caso de estudio": {
+		"scope": "markdown, md",
+		"prefix": "mde_cita_caso_de_estudio",
+		"body": [
+			"> :mortar_board: **Caso de estudio:**",
+			"> ",
+			"> $1",
+			"> "
+		],
+		"description": "Cita con caso de estudio"
+	},
+	"Tips": {
+		"scope": "markdown, md",
+		"prefix": "mde_cita_tips",
+		"body": [
+			"> :bulb: **Tips:**",
+			"> ",
+			"> $1",
+			"> "
+		],
+		"description": "Cita con tips"
+	},
+	"Nota": {
+		"scope": "markdown, md",
+		"prefix": "mde_cita_nota",
+		"body": [
+			"> :pushpin: **Nota:**",
+			"> ",
+			"> $1",
+			"> "
+		],
+		"description": "Cita con nota"
+	},	
+	"Resumen": {
+		"scope": "markdown, md",
+		"prefix": "mde_cita_resumen",
+		"body": [
+			"> :mega: **Resumen:**",
+			"> ",
+			"> $1",
+			"> "
+		],
+		"description": "Cita con un resumen"
+	},
+	"Aviso": {
+		"scope": "markdown, md",
+		"prefix": "mde_cita_aviso",
+		"body": [
+			"> :warning: **Aviso:**",
+			"> ",
+			"> $1",
+			"> "
+		],
+		"description": "Cita de aviso"
+	},
+	"Peligro": {
+		"scope": "markdown, md",
+		"prefix": "mde_cita_peligro",
+		"body": [
+			"> :skull: **Peligro:**",
+			"> ",
+			"> $1",
+			"> "
+		],
+		"description": "Cita de peligro"
+	},		
+	"Icono_buena_práctica": {
+		"scope": "markdown, md",
+		"prefix": "mde_icono_buena_práctica",
+		"body": [
+			":heavy_check_mark: :+1:"
+		],
+		"description": "Icono_buena_práctica"
+	},		
+	"Icono_mala_práctica": {
+		"scope": "markdown, md",
+		"prefix": "mde_icono_mala_práctica",
+		"body": [
+			":x: :-1:"
+		],
+		"description": "Icono_mala_práctica"
+	}	
+}
