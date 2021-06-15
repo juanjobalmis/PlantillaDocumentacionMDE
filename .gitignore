@@ -1,0 +1,14 @@
+# Carpetas
+.vscode/
+temp/
+tmp/
+
+# Temporales
+*.odt#
+
+# Long Files
+*.mp4
+
+# Ejecutables
+*.exe
+

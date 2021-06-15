@@ -1,0 +1,40 @@
+# name: PublicaWeb
+# 
+# # Al hacerse Push en master
+# on:
+#   push:
+#     branches: [ master ]
+# 
+# # Ejecuta este workflow secuencial (otro job se ejecutaría en paralelo)
+# jobs:
+#   # Solo hay un trabajo llamado publica
+#   publica:
+#     # Se ejecuta en una máquina de ubuntu
+#     runs-on: ubuntu-latest
+# 
+#     # Secuencia de pasos
+#     steps:
+#       # Hace un un checkout del espacio de trabajo actual ($GITHUB_WORKSPACE) y después un checkout a la rama master
+#       - uses: actions/checkout@v2
+# 
+#       # Ejecuta esta lista de comando en un bash de ubuntu donde ...
+#       # Creo una carpeta a publicar en www eliminando carpetas vacías y solo las extensiones indicadas en rsync_files.txt
+#       # Posteriormente elimino carpetas que no quiero que se publiquen
+#       - name: Crea carpeta a publicar en www
+#         run: |
+#           rsync -av --prune-empty-dirs --include-from=rsync_files.txt ./ www/
+#           rm -Rv www/Examenes
+#           rm -Rv www/Proyectos
+#           rm -Rv www/Bibliografía
+# 
+#       # Publico en la rama main del repositorio donde tengo github pages activado el contenido sincronizado en www ...
+#       - name: Despliego www en el repo donde tengo github pages activado
+#         uses: peaceiris/actions-gh-pages@v3
+#         with:
+#           personal_token: ${{ secrets.DEPLOY_GH_KEY }}
+#           external_repository: nombre del repositorio sin https
+#           publish_branch: main
+#           publish_dir: ./www
+#           allow_empty_commit: true
+
+
