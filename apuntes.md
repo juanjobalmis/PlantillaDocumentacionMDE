@@ -32,6 +32,8 @@ toc:
     ordered: false
 ---
 
+@import "EstilosPersonalizadosMarkdownEnhanced.less"
+
 # Apuntes {ignore=true}
 
 [Descargar estos apuntes](./apuntes.pdf)
@@ -61,6 +63,8 @@ toc:
 * :heavy_check_mark: Permite bifurcaciones.
 * :heavy_check_mark: Permite familiarizarse con tecnologías como MarkDown y Git (GitHub) para después aplicarlas con los alumnos en proyectos de grupo o transversales.
 
+<div style="page-break-after:always;"></div>
+
 ## Pre-Requisitos
 
 1. Tener una **cuenta de GitHub** (Especial para profesores)
@@ -69,7 +73,8 @@ toc:
 
 2. Tener instalado **Google Chrome** en el equipo.
 3. Tener instalado **[Git](https://git-scm.com/download/win)**
-4. Tener instalado **[Visual Studio Code](https://code.visualstudio.com/)**.
+4. Tener el Java Runtime instalado.
+5. Tener instalado **[Visual Studio Code](https://code.visualstudio.com/)**.
 
     Se recomienda asociar un perfil de VSCode con la cuenta de GitHub y añadir las siguiente extensiones:
     * Markdown All In One. (Permite editar documentos markdown de forma simple).
@@ -79,10 +84,142 @@ toc:
     * Otras:
 
       * Visual Studio Keymap (O el que prefieras)
+      * TODO Highlight
       * GitHub Pull Requests and Issues
       * GitHub Actions
       * Convert to Markdown Table.
       * markdownlint.
+
+<div style="page-break-after:always;"></div>
+
+## Trabajo básico con markdown
+
+La extensión markdownlint te ayuda ha escribir markdown normalizado, pero como estamos usando una extensión, no es es muy importante salvo respetar los saltos de línea.
+
+En **`cheatsheet_markdown.pdf`** dispones de las extensiones apropiadas.
+
+También puedes consultar la documentación oficial en la [Página de Markdown Preview Enhanced](https://shd101wyy.github.io/markdown-preview-enhanced/#/)
+
+> :hand: **Importante:**
+> 
+> En la carpeta **`.vscode/`** se han pre-definido varios code snippets (fragmentos de código) en en fichero **`FragmentosPernosalizados.code-snippets`**
+> Para usarlos, una vez abierto un fichero con extensión markdown escribiremos **`mde_`** seguido de **`Ctrl + Space`** que es el (trigger suggestions) en mi KeyMap.
+
+### Elementos especiales
+
+Funciones matemáticas en línea $f(x) = x^2+3$
+
+Con display en bloque:
+
+$$f(x) = x^2+3$$
+
+Código indicando el lenguaje a renderizar:
+
+```txt
+    ```csharp
+    string AYUDA = "csharp{.line-numbers} para numerar las líneas." +
+                "csharp{highlight=2} para resaltar la línea 2" +
+                "csharp{highlight=[2,5-7]} para resaltar la 2 y de la 5 a la 7" +
+                "csharp{highlight=1; .line-numbers} para hacer ambas cosas";
+    ```
+```
+```csharp
+    string AYUDA = "csharp{.line-numbers} para numerar las líneas." +
+                "csharp{highlight=2} para resaltar la línea 2" +
+                "csharp{highlight=[2,5-7]} para resaltar la 2 y de la 5 a la 7" +
+                "csharp{highlight=1; .line-numbers} para hacer ambas cosas";
+```
+
+Diagramas de Graphviz, PlantUML, Mermaid, etc.
+
+```txt
+    ```puml {align="center", style="zoom:1"}
+    @startmindmap
+    <style>
+    mindmapDiagram {
+        Linecolor black
+        FontName Arial
+        FontSize 14
+        node {
+                Padding 15
+                Margin 15
+                HorizontalAlignment center
+                BackGroundColor white
+            }
+    }
+    </style>
+
+    *[#snow] Debian
+    ** Ubuntu
+    *** Linux Mint
+    *** Kubuntu
+    *** KDE Neon
+    ** SteamOS
+
+    @endmindmap
+    ```
+```
+
+
+```puml {align="center", style="zoom:1"}
+@startmindmap
+<style>
+  mindmapDiagram {
+    Linecolor black
+    FontName Arial
+    FontSize 14
+    node {
+            Padding 15
+            Margin 15
+            HorizontalAlignment center
+            BackGroundColor white
+         }
+  }
+</style>
+
+*[#snow] Debian
+** Ubuntu
+*** Linux Mint
+*** Kubuntu
+*** KDE Neon
+** SteamOS
+
+@endmindmap
+```
+
+<div style="page-break-after:always;"></div>
+
+Uso directo de HTML embebido con estilos definidos en el fichero importado justo después del frontmatter denominado **`EstilosPersonalizadosMarkdownEnhanced.less`**. Se puede utilizar para maquetaciones complejas.
+
+```html
+<div class="contenedor">
+    <div class="fondo">
+        <div class="abre_comilla">"</div>
+        <div class="cierra_comilla">"</div>
+        <div class="cita">Esto es una cita.</div>
+        <div class="autor">- Aquí va el autor.</div>
+    </div>
+</div>
+```
+
+<div class="contenedor">
+    <div class="fondo">
+        <div class="abre_comilla">"</div>
+        <div class="cierra_comilla">"</div>
+        <div class="cita">Esto es una cita.</div>
+        <div class="autor">- Aquí va el autor.</div>
+    </div>
+</div>
+
+Importar código **renderizado al vuelo** a gráfico vectorial.
+
+```txt
+@import "assets/linux_kernel.dot" {align="center", style="zoom:0.4"}
+```
+
+@import "assets/linux_kernel.dot" {align="center", style="zoom:0.4"}
+
+<div style="page-break-after:always;"></div>
 
 ## Flujo de trabajo y configuraciones
 

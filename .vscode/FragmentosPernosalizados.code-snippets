@@ -44,6 +44,8 @@
 			"\tordered: true",
 			"---",
 			"",
+			"@import \\\"EstilosPersonalizadosMarkdownEnhanced.less\\\"",
+			"",
 			"# ${3:título_documento} {ignore=true}",
 			"",
 			"[Descargar estos apuntes](./${4:nombre_fichero}.pdf)",
@@ -76,14 +78,14 @@
 	},
 	"Cita autor HTML": {
 		"scope": "markdown, md",
-		"prefix": "mde_citaCentrada",
+		"prefix": "mde_cita_autor_centrada",
 		"body": [
 			"<div class=\"contenedor\">",
 			"\t<div class=\"fondo\">",
 			"\t\t<div class=\"abre_comilla\">\"</div>",
 			"\t\t<div class=\"cierra_comilla\">\"</div>",
-			"\t\t<div class=\"cita\">$1.</div>",
-			"\t\t<div class=\"autor\">- $2</div>",
+			"\t\t<div class=\"cita\">${1:TextoCita}.</div>",
+			"\t\t<div class=\"autor\">- ${2:Autor}</div>",
 			"\t</div>",
 			"</div>"
 		],
