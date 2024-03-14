@@ -3,7 +3,7 @@
 # # Al hacerse Push en master
 # on:
 #   push:
-#     branches: [ master ]
+#     branches: [ main ]
 # 
 # # Ejecuta este workflow secuencial (otro job se ejecutaría en paralelo)
 # jobs:

@@ -12,8 +12,8 @@
 		"body": [
 			"---",
 			"title:",
-			"\t${1:titulo}",
-			"date: ${2:fecha}",
+			"\t$1",
+			"date: $2",
 			"export_on_save:",
 			"\tpuppeteer: true",
 			"\thtml: true",
@@ -30,44 +30,71 @@
 			"\tdisplayHeaderFooter: true",
 			"\theaderTemplate: \"&nbsp;\"",
 			"\tfooterTemplate: \"",
-			"\t<span style=\\\"font-size: 9pt; display: flex;\\\">",
-			"\t\t<span class=\\\"pageNumber\\\" style=\\\"margin-left: 1cm;\\\"></span>",
-			"\t\t/",
-			"\t\t<span class=\\\"totalPages\\\"></span>",
-			"\t\t<span class=\\\"title\\\" style=\\\"margin-left: 1cm;\\\"></span>",
-			"\t\t<span style=\\\"margin-left: 1cm;\\\">Aquí el autor o autores</span>",
-			"\t</span>",
-			"\t\"",
+			"\t\t<span style=\\\"font-size: 9pt; display: flex;\\\">",
+			"\t\t\t<span class=\\\"pageNumber\\\" style=\\\"margin-left: 1cm;\\\"></span>",
+			"\t\t\t/",
+			"\t\t\t<span class=\\\"totalPages\\\"></span>",
+			"\t\t\t<span class=\\\"title\\\" style=\\\"margin-left: 1cm;\\\"></span>",
+			"\t\t\t<span style=\\\"margin-left: 1cm;\\\">Xusa García y Juanjo Guarinos</span>",
+			"\t\t</span>",
+			"\t\t\t\t\t\"",
 			"toc:",
 			"\tdepth_from: 1",
 			"\tdepth_to: 5",
 			"\tordered: true",
-			"---",
-			"",
-			"@import \\\"EstilosPersonalizadosMarkdownEnhanced.less\\\"",
-			"",
-			"# ${3:título_documento} {ignore=true}",
-			"",
-			"[Descargar estos apuntes](./${4:nombre_fichero}.pdf)",
-			"",
-			"## Índice {ignore=true}",
-			"",
-			"[TOC]",
-			"",
-			"<div style=\\\"page-break-after:always;\\\"></div>",
+			"---"
 		],
 		"description": "Front Matter YAML"
 	},
-	"Imegen centrada en HTML": {
+	"Imagen centrada en HTML": {
 		"scope": "markdown, md",
 		"prefix": "mde_imagenCentrada",
 		"body": [
-			"<div align=\"center\">",
+			"<div style=\"display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px\">",
 			"\t<img height=\"$1\" src=\"$2\">",
 			"</div>"
 		],
 		"description": "Imegen centrada en HTML"
 	},
+	"Imagen flotante a la derecha de contenido": {
+		"scope": "markdown, md",
+		"prefix": "mde_imagenFlotanteADerecha",
+		"body": [
+			"<div style=\"display: flex; justify-content: space-between; align-items: center; margin-top: 15px\">",
+			"<div style=\"width: 70%\">",
+			"\n<!-- AQUÍ IRÁ TODO EL MARKDOWN FLOTANTE A LA IZQUIERDA DE LA IMAGEN -->\n",
+			"</div>",
+			"<div style=\"width: auto\">",
+			"\t<img height=\"200px\" src=\"$1\" />",
+			"</div>",
+			"</div>"
+		],
+		"description": "Imagen flotante a la derecha de contenido en HTML"
+	},
+	"Tabla con dos imagenes": {
+		"scope": "markdown, md",
+		"prefix": "mde_tabla_dos_imagenes",
+		"body": [
+			"<span style=\"align: center;\">",
+			"<table align=\"center\">",
+			"<tr>",
+			"<td>",
+			"<div align=\"center\">",
+			"\t<img height=\"$1\" src=\"$2\">",
+			"</div>",
+			"</td>",
+			"<td>",
+			"<div align=\"center\">",
+			"\t<img height=\"$1\" src=\"$2\">",
+			"</div>",
+			"</td>",
+			"</tr>",
+			"</table>",
+			"</span>"
+		],
+		"description": "Tabla con dos imagenes"
+	},
+	
 	"Salto de página en pdf": {
 		"scope": "markdown, md",
 		"prefix": "mde_saltoPagina",
@@ -78,14 +105,14 @@
 	},
 	"Cita autor HTML": {
 		"scope": "markdown, md",
-		"prefix": "mde_cita_autor_centrada",
+		"prefix": "mde_citaCentrada",
 		"body": [
 			"<div class=\"contenedor\">",
 			"\t<div class=\"fondo\">",
 			"\t\t<div class=\"abre_comilla\">\"</div>",
 			"\t\t<div class=\"cierra_comilla\">\"</div>",
-			"\t\t<div class=\"cita\">${1:TextoCita}.</div>",
-			"\t\t<div class=\"autor\">- ${2:Autor}</div>",
+			"\t\t<div class=\"cita\">$1.</div>",
+			"\t\t<div class=\"autor\">- $2</div>",
 			"\t</div>",
 			"</div>"
 		],
@@ -128,9 +155,9 @@
 		],
 		"description": "Bloque en C#"
 	},
-	"Clases PlantUML": {
+	"PlantUML": {
 		"scope": "markdown, md",
-		"prefix": "mde_bloque_puml_clases",
+		"prefix": "mde_bloque_puml",
 		"body": [
 			"```puml {align=\"center\", style=\"zoom:1\"}",
 			"@startuml",
@@ -147,43 +174,22 @@
 		],
 		"description": "Bloque puml"
 	},
-	"MindMap PlantUML": {
-		"scope": "markdown, md, puml",
-		"prefix": "mde_bloque_puml_mindMap",
-		"body": [
-			"```puml {align=\"center\", style=\"zoom:1\"}",
-			"@startmindmap",
-			"<style>",
-			"  mindmapDiagram {",
-			"    Linecolor black",
-			"    FontName Arial",
-			"    FontSize 14",
-			"    node {",
-			"            Padding 15",
-			"            Margin 15",
-			"            HorizontalAlignment center",
-			"            BackGroundColor white",
-			"         }",
-			"  }",
-			"</style>",
-			"",
-			"*[#snow] Debian",
-			"** Ubuntu",
-			"*** Linux Mint",
-			"*** Kubuntu",
-			"*** KDE Neon",
-			"** SteamOS",
-			"",
-			"@endmindmap",
-			"```"
-		],
-		"description": "Insertar un mapa mental"
-	},
 	"Importante": {
 		"scope": "markdown, md",
 		"prefix": "mde_cita_importante",
 		"body": [
 			"> :hand: **Importante:**",
+			"> ",
+			"> $1",
+			"> "
+		],
+		"description": "Cita con algo importante"
+	},
+	"Ampliación": {
+		"scope": "markdown, md",
+		"prefix": "mde_cita_ampliacion",
+		"body": [
+			"> :rocket: **Ampliación:**",
 			"> ",
 			"> $1",
 			"> "
@@ -212,17 +218,6 @@
 		],
 		"description": "Cita con tips"
 	},
-	"Nota": {
-		"scope": "markdown, md",
-		"prefix": "mde_cita_nota",
-		"body": [
-			"> :pushpin: **Nota:**",
-			"> ",
-			"> $1",
-			"> "
-		],
-		"description": "Cita con nota"
-	},	
 	"Resumen": {
 		"scope": "markdown, md",
 		"prefix": "mde_cita_resumen",

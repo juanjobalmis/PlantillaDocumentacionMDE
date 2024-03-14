@@ -5,6 +5,7 @@
 + *.jpeg
 + *.jpg
 + *_ejemplo.cs
-+ *_caso_de_estudio.zip
++ *_ejemplo.zip
++ *_recurso.zip
 + *.svg
 - *

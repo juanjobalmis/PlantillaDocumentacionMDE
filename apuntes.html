@@ -3,265 +3,33 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css">
-      
-      
-      
-      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
       
       
       
       
       
       <style>
-      /**
- * prism.js Github theme based on GitHub's theme.
- * @author Sam Clarke
- */
-code[class*="language-"],
-pre[class*="language-"] {
-  color: #333;
-  background: none;
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 1.4;
-
-  -moz-tab-size: 8;
-  -o-tab-size: 8;
-  tab-size: 8;
-
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-  padding: .8em;
-  overflow: auto;
-  /* border: 1px solid #ddd; */
-  border-radius: 3px;
-  /* background: #fff; */
-  background: #f5f5f5;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-  padding: .1em;
-  border-radius: .3em;
-  white-space: normal;
-  background: #f5f5f5;
-}
-
-.token.comment,
-.token.blockquote {
-  color: #969896;
-}
-
-.token.cdata {
-  color: #183691;
-}
-
-.token.doctype,
-.token.punctuation,
-.token.variable,
-.token.macro.property {
-  color: #333;
-}
-
-.token.operator,
-.token.important,
-.token.keyword,
-.token.rule,
-.token.builtin {
-  color: #a71d5d;
-}
-
-.token.string,
-.token.url,
-.token.regex,
-.token.attr-value {
-  color: #183691;
-}
-
-.token.property,
-.token.number,
-.token.boolean,
-.token.entity,
-.token.atrule,
-.token.constant,
-.token.symbol,
-.token.command,
-.token.code {
-  color: #0086b3;
-}
-
-.token.tag,
-.token.selector,
-.token.prolog {
-  color: #63a35c;
-}
-
-.token.function,
-.token.namespace,
-.token.pseudo-element,
-.token.class,
-.token.class-name,
-.token.pseudo-class,
-.token.id,
-.token.url-reference .token.variable,
-.token.attr-name {
-  color: #795da3;
-}
-
-.token.entity {
-  cursor: help;
-}
-
-.token.title,
-.token.title .token.punctuation {
-  font-weight: bold;
-  color: #1d3e81;
-}
-
-.token.list {
-  color: #ed6a43;
-}
-
-.token.inserted {
-  background-color: #eaffea;
-  color: #55a532;
-}
-
-.token.deleted {
-  background-color: #ffecec;
-  color: #bd2c00;
-}
-
-.token.bold {
-  font-weight: bold;
-}
-
-.token.italic {
-  font-style: italic;
-}
-
-
-/* JSON */
-.language-json .token.property {
-  color: #183691;
-}
-
-.language-markup .token.tag .token.punctuation {
-  color: #333;
-}
-
-/* CSS */
-code.language-css,
-.language-css .token.function {
-  color: #0086b3;
-}
-
-/* YAML */
-.language-yaml .token.atrule {
-  color: #63a35c;
-}
-
-code.language-yaml {
-  color: #183691;
-}
-
-/* Ruby */
-.language-ruby .token.function {
-  color: #333;
-}
-
-/* Markdown */
-.language-markdown .token.url {
-  color: #795da3;
-}
-
-/* Makefile */
-.language-makefile .token.symbol {
-  color: #795da3;
-}
-
-.language-makefile .token.variable {
-  color: #183691;
-}
-
-.language-makefile .token.builtin {
-  color: #0086b3;
-}
-
-/* Bash */
-.language-bash .token.keyword {
-  color: #0086b3;
-}
-
-/* highlight */
-pre[data-line] {
-  position: relative;
-  padding: 1em 0 1em 3em;
-}
-pre[data-line] .line-highlight-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: transparent;
-  display: block;
-  width: 100%;
-}
-
-pre[data-line] .line-highlight {
-  position: absolute;
-  left: 0;
-  right: 0;
-  padding: inherit 0;
-  margin-top: 1em;
-  background: hsla(24, 20%, 50%,.08);
-  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
-  pointer-events: none;
-  line-height: inherit;
-  white-space: pre;
-}
-
-pre[data-line] .line-highlight:before, 
-pre[data-line] .line-highlight[data-end]:after {
-  content: attr(data-start);
-  position: absolute;
-  top: .4em;
-  left: .6em;
-  min-width: 1em;
-  padding: 0 .5em;
-  background-color: hsla(24, 20%, 50%,.4);
-  color: hsl(24, 20%, 95%);
-  font: bold 65%/1.5 sans-serif;
-  text-align: center;
-  vertical-align: .3em;
-  border-radius: 999px;
-  text-shadow: none;
-  box-shadow: 0 1px white;
-}
-
-pre[data-line] .line-highlight[data-end]:after {
-  content: attr(data-end);
-  top: auto;
-  bottom: .4em;
-}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}@font-face{font-family:"Material Icons";font-style:normal;font-weight:400;src:local("Material Icons"),local("MaterialIcons-Regular"),url("data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAfIAAsAAAAADDAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADMAAABCsP6z7U9TLzIAAAE8AAAARAAAAFZW7kosY21hcAAAAYAAAADTAAACjtP6ytBnbHlmAAACVAAAAxgAAAQ4zRtvlGhlYWQAAAVsAAAALwAAADYRwZsnaGhlYQAABZwAAAAcAAAAJAeKAzxobXR4AAAFuAAAABIAAAA8OGQAAGxvY2EAAAXMAAAAIAAAACAG5AfwbWF4cAAABewAAAAfAAAAIAEfAERuYW1lAAAGDAAAAVcAAAKFkAhoC3Bvc3QAAAdkAAAAYgAAAK2vz7wkeJxjYGRgYOBikGPQYWB0cfMJYeBgYGGAAJAMY05meiJQDMoDyrGAaQ4gZoOIAgCKIwNPAHicY2BkPsQ4gYGVgYOpk+kMAwNDP4RmfM1gxMjBwMDEwMrMgBUEpLmmMDgwVLy4xKzzX4chhrmK4QpQmBEkBwAZygyweJzFkr0NwjAQhZ+TEP6CRUfHBEwRUWaQTICyQbpMwRCskA5RUIONxG0RnnNpKAIV4qzPku/8c353ACYAYrIjCWCuMAh2ptf0/hiL3p/gyPUWa3osqlt0L1zu9r71z8dGrJRykFoauXQd932Lj5vhG+MjxGeYI8MKETObMpslf5EyP8tg+vHun5r539PvlvXzaVhRFVQDTPEWKVQR90KhnnC5Ek67vUKN4VuFasM/ldARj43CCkCsEjpJSoVVgRyU0GVSK6wUpFFCx8lFgX0BiXpRPQB4nE2TTWjcRhTH3xttpDhxN7uxPlp3u/FK7moRPixafRijNosxSw/LUsIwNcaEHPZggo/FmEKMCKWU4kNOOftQSlhE8alnH0Ix9BqWnHooPRrTQ0+mnu2bXTu2pPdGM9LM/6c3fwECTM4gBBMYQNqxzLrZAjqYSlqu2TAHZQA0/DQJH6FtzqGDnvbt4Ggwvzw/nL8EfH8kW0fsuRqhgWXZnY7M1picaUL7Du5BHeDzMIl83dAt016wH1qmvtSMo5R6YRJHTR//FXsff/nj/tc/5K9P5d+nP22+fFK5u7v3K39SW3y+OtDKO3L85vD09PD9z5X17a2N1g4tqk01RlqX7gyoEmnsWQtVr4rtZMmukEaFBZxzefkCn11cyKMLZgshRwgTYNoLNXCBz2ja7HvZG7hDpPSNfoo5vs0knK/9hb+rNpu+8kHPgk/Ao4kK3tWtTpSEtvkA9c+wE6UaUdwieNkaHg55tBEtRiEPw1s0+FtrtTcc9two2lhMknV7PZF/cs6+uUFTmpTGbEx7sQCPSLOttHS3GRltqp7SNzVSKzl6aWnZT/CX5k6/v9N3Hh8fHBwffJVjhrC6OgH5dkIt/tPsq+d/PD5Qz7G7efzq1THFjdZVPe/N6ulQ3JnDWSE5junsFsVIiFwL/htf1S5gJ3BfOcUxfHKLnzqpFpyfZ9cX+/5WB6a+Y0pHpzkNrYNVDwMsikK+y7WuLCRg/oFHkA8VT3rDg5ZnU6ktzzINymV0m74Xd5pfIGXyFeVEQSShkzqG7TBBa2OxVRKitLXv7h3uuftXnXq7lz2tZ/WnWa9dx9dCjDhHzmuVQATlmljr9dZErUydSo2Hbi/b1vXtrOeGCk2/8s3ZlO8+ueJT8BVlw5pGw2oYccdSiHHqx0RlabHqdNR9jAETl6PreJcPBnnfpTLnOQ8C3OV8AmQGzouV1iZdeb5SSIoVc8W8/kcDtksUH5FrU6/aqBqNWcMEzxG4DAQ14qRQhi9mWU0rzepKezbjfgCwQKxVYq5ajRgpRqy45CqwkJydcEkbTkvRz8P5/2ZpDTN4nGNgZGBgAOKb6v+/xvPbfGXgZmEAgeuB2kkI+v8bFgbmKiCXg4EJJAoAPyAKhQB4nGNgZGBg1vmvwxDDwgACQJKRARXwAwAzZQHQeJxjYQCCFAYGFgbSMQAcWACdAAAAAAAAAAwALgBgAIQAmADSAQgBIgE8AVABoAHeAfwCHHicY2BkYGDgZ7BgYGMAASYg5gJCBob/YD4DAA/hAWQAeJxlkbtuwkAURMc88gApQomUJoq0TdIQzEOpUDokKCNR0BuzBiO/tF6QSJcPyHflE9Klyyekz2CuG8cr7547M3d9JQO4xjccnJ57vid2cMHqxDWc40G4Tv1JuEF+Fm6ijRfhM+oz4Ra6eBVu4wZvvMFpXLIa40PYQQefwjVc4Uu4Tv1HuEH+FW7i1mkKn6Hj3Am3sHC6wm08Ou8tpSZGe1av1PKggjSxPd8zJtSGTuinyVGa6/Uu8kxZludCmzxMEzV0B6U004k25W35fj2yNlCBSWM1paujKFWZSbfat+7G2mzc7weiu34aczzFNYGBhgfLfcV6iQP3ACkSaj349AxXSN9IT0j16JepOb01doiKbNWt1ovippz6sVYYwsXgX2rGVFIkq7Pl2PNrI6qW6eOshj0xaSq9mpNEZIWs8LZUfOouNkVXxp/d5woqebeYIf4D2J1ywQB4nG3LOw6AIBAE0B384B+PAkgEa+QwNnYmHt+EpXSal5lkSBBnoP8oCFSo0aCFRIceA0ZMmLFAYSW88rmvtMUjG3RiQ9HvpfusM6zWNmtc5H/iPewha50tOt5PS/QBx2IeSwAA") format("woff")}.admonition{box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);position:relative;margin:1.5625em 0;padding:0 1.2rem;border-left:.4rem solid rgba(68,138,255,.8);border-radius:.2rem;background-color:rgba(255,255,255,.05);overflow:auto}.admonition>p{margin-top:.8rem}.admonition>.admonition-title{margin:0 -1.2rem;padding:.8rem 1.2rem .8rem 3.6rem;border-bottom:1px solid rgba(68,138,255,.2);background-color:rgba(68,138,255,.1);font-weight:700}.admonition>.admonition-title:before{position:absolute;left:1.2rem;font-size:1.5rem;color:rgba(68,138,255,.8);content:"\E3C9"}.admonition>.admonition-title:before{font-family:Material Icons;font-style:normal;font-variant:normal;font-weight:400;line-height:2rem;text-transform:none;white-space:nowrap;speak:none;word-wrap:normal;direction:ltr}.admonition.abstract,.admonition.summary,.admonition.tldr{border-left-color:rgba(0,176,255,.8)}.admonition.abstract>.admonition-title,.admonition.summary>.admonition-title,.admonition.tldr>.admonition-title{background-color:rgba(0,176,255,.1);border-bottom-color:rgba(0,176,255,.2)}.admonition.abstract>.admonition-title:before,.admonition.summary>.admonition-title:before,.admonition.tldr>.admonition-title:before{color:#00b0ff;content:"\E8D2"}.admonition.hint,.admonition.tip{border-left-color:rgba(0,191,165,.8)}.admonition.hint>.admonition-title,.admonition.tip>.admonition-title{background-color:rgba(0,191,165,.1);border-bottom-color:rgba(0,191,165,.2)}.admonition.hint>.admonition-title:before,.admonition.tip>.admonition-title:before{color:#00bfa5;content:"\E80E"}.admonition.info,.admonition.todo{border-left-color:rgba(0,184,212,.8)}.admonition.info>.admonition-title,.admonition.todo>.admonition-title{background-color:rgba(0,184,212,.1);border-bottom-color:rgba(0,184,212,.2)}.admonition.info>.admonition-title:before,.admonition.todo>.admonition-title:before{color:#00b8d4;content:"\E88E"}.admonition.check,.admonition.done,.admonition.success{border-left-color:rgba(0,200,83,.8)}.admonition.check>.admonition-title,.admonition.done>.admonition-title,.admonition.success>.admonition-title{background-color:rgba(0,200,83,.1);border-bottom-color:rgba(0,200,83,.2)}.admonition.check>.admonition-title:before,.admonition.done>.admonition-title:before,.admonition.success>.admonition-title:before{color:#00c853;content:"\E876"}.admonition.faq,.admonition.help,.admonition.question{border-left-color:rgba(100,221,23,.8)}.admonition.faq>.admonition-title,.admonition.help>.admonition-title,.admonition.question>.admonition-title{background-color:rgba(100,221,23,.1);border-bottom-color:rgba(100,221,23,.2)}.admonition.faq>.admonition-title:before,.admonition.help>.admonition-title:before,.admonition.question>.admonition-title:before{color:#64dd17;content:"\E887"}.admonition.attention,.admonition.caution,.admonition.warning{border-left-color:rgba(255,145,0,.8)}.admonition.attention>.admonition-title,.admonition.caution>.admonition-title,.admonition.warning>.admonition-title{background-color:rgba(255,145,0,.1);border-bottom-color:rgba(255,145,0,.2)}.admonition.attention>.admonition-title:before{color:#ff9100;content:"\E417"}.admonition.caution>.admonition-title:before,.admonition.warning>.admonition-title:before{color:#ff9100;content:"\E002"}.admonition.fail,.admonition.failure,.admonition.missing{border-left-color:rgba(255,82,82,.8)}.admonition.fail>.admonition-title,.admonition.failure>.admonition-title,.admonition.missing>.admonition-title{background-color:rgba(255,82,82,.1);border-bottom-color:rgba(255,82,82,.2)}.admonition.fail>.admonition-title:before,.admonition.failure>.admonition-title:before,.admonition.missing>.admonition-title:before{color:#ff5252;content:"\E14C"}.admonition.bug,.admonition.danger,.admonition.error{border-left-color:rgba(255,23,68,.8)}.admonition.bug>.admonition-title,.admonition.danger>.admonition-title,.admonition.error>.admonition-title{background-color:rgba(255,23,68,.1);border-bottom-color:rgba(255,23,68,.2)}.admonition.danger>.admonition-title:before{color:#ff1744;content:"\E3E7"}.admonition.error>.admonition-title:before{color:#ff1744;content:"\E14C"}.admonition.bug>.admonition-title:before{color:#ff1744;content:"\E868"}.admonition.example,.admonition.snippet{border-left-color:rgba(0,184,212,.8)}.admonition.example>.admonition-title,.admonition.snippet>.admonition-title{background-color:rgba(0,184,212,.1);border-bottom-color:rgba(0,184,212,.2)}.admonition.example>.admonition-title:before,.admonition.snippet>.admonition-title:before{color:#00b8d4;content:"\E242"}.admonition.cite,.admonition.quote{border-left-color:rgba(158,158,158,.8)}.admonition.cite>.admonition-title,.admonition.quote>.admonition-title{background-color:rgba(158,158,158,.1);border-bottom-color:rgba(158,158,158,.2)}.admonition.cite>.admonition-title:before,.admonition.quote>.admonition-title:before{color:#9e9e9e;content:"\E244"}
 /* Please visit the URL below for more information: */
 /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+.markdown-preview.markdown-preview p {
+  text-align: justify;
+}
 
       </style>
-    </head>
-    <body for="html-export">
-      <div class="mume markdown-preview  ">
-      <style>/* 
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<p><style>/* 
 Añade 
 
 @import "../EstilosPersonalizadosMarkdownEnhanced.less"
@@ -274,7 +42,7 @@ justo después del front matter
   font-family: 'Catamaran';
   font-style: normal;
   font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/catamaran/v8/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/catamaran/v19/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
 }
 .contenedor {
   display: flex;
@@ -332,57 +100,91 @@ justo después del front matter
   top: 83%;
   font-size: 1rem;
 }
-</style>
-<h1 class="mume-header undefined" id="apuntes">Apuntes</h1>
-
+</style></p>
+<h1 id="apuntes">Apuntes </h1>
 <p><a href="./apuntes.pdf">Descargar estos apuntes</a></p>
-<h2 class="mume-header undefined" id="%C3%ADndice">&#xCD;ndice</h2>
+<h2 id="índice">Índice </h2>
 
-<ul>
-<li><a href="#introducci%C3%B3n">Introducci&#xF3;n</a>
-<ul>
-<li><a href="#desventajas-1">Desventajas &#x1F44E;</a></li>
-<li><a href="#vantajas-1">Vantajas &#x1F44D;</a></li>
-</ul>
-</li>
-<li><a href="#pre-requisitos">Pre-Requisitos</a></li>
-<li><a href="#trabajo-b%C3%A1sico-con-markdown">Trabajo b&#xE1;sico con markdown</a>
-<ul>
-<li><a href="#elementos-especiales">Elementos especiales</a></li>
-</ul>
-</li>
-<li><a href="#flujo-de-trabajo-y-configuraciones">Flujo de trabajo y configuraciones</a></li>
-</ul>
+<div class="md-toc">
+<details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#introducción" class="md-toc-link"><p>Introducción</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#desventajas--1" class="md-toc-link">
+            <p>Desventajas 👎</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#vantajas-1" class="md-toc-link">
+            <p>Vantajas 👍</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#pre-requisitos" class="md-toc-link">
+            <p>Pre-Requisitos</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#trabajo-básico-con-markdown" class="md-toc-link"><p>Trabajo básico con markdown</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#elementos-especiales" class="md-toc-link">
+            <p>Elementos especiales</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#flujo-de-trabajo-y-configuraciones" class="md-toc-link">
+            <p>Flujo de trabajo y configuraciones</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#admonition" class="md-toc-link"><p>Admonition</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#vantajas-1-1" class="md-toc-link">
+            <p>Vantajas 👍</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+</div>
 <div style="\&quot;page-break-after:always;\&quot;"></div>
-<h2 class="mume-header" id="introducci%C3%B3n">Introducci&#xF3;n</h2>
-
-<h3 class="mume-header" id="desventajas-1">Desventajas &#x1F44E;</h3>
-
+<h2 id="introducción">Introducción </h2>
+<h3 id="desventajas--1">Desventajas 👎 </h3>
 <ul>
-<li>&#x274C; Hacer maquetaciones complejas es &apos;<em>costoso</em>&apos;.</li>
-<li>&#x274C; Requiere del manejo de varias herramientas y tecnolog&#xED;as.</li>
-<li>&#x274C; Requiere de una estructura inicial &apos;<em>compleja</em>&apos;.</li>
-<li>&#x274C; Tiene poco sentido si no se va a generar documentaci&#xF3;n t&#xE9;cnica o se va a trabajar de forma individualizada.</li>
-<li>&#x274C; Documentaci&#xF3;n &apos;<em>pobre</em>&apos; ne ocasiones.</li>
+<li>❌ Hacer maquetaciones complejas es '<em>costoso</em>'.</li>
+<li>❌ Requiere del manejo de varias herramientas y tecnologías.</li>
+<li>❌ Requiere de una estructura inicial '<em>compleja</em>'.</li>
+<li>❌ Tiene poco sentido si no se va a generar documentación técnica o se va a trabajar de forma individualizada.</li>
+<li>❌ Documentación '<em>pobre</em>' ne ocasiones.</li>
 </ul>
-<h3 class="mume-header" id="vantajas-1">Vantajas &#x1F44D;</h3>
-
+<h3 id="vantajas-1">Vantajas 👍 </h3>
 <ul>
-<li>&#x2714;&#xFE0F; <strong>Ideal para trabajo en equipo</strong> o en grupo.</li>
-<li>&#x2714;&#xFE0F; Homogeneidad en la generaci&#xF3;n de contenido.</li>
-<li>&#x2714;&#xFE0F; Historial y revisi&#xF3;n de cambios integrado.</li>
-<li>&#x2714;&#xFE0F; <strong>Automatizaci&#xF3;n</strong> en la generaci&#xF3;n de documentos y despliegue.</li>
-<li>&#x2714;&#xFE0F; Permite bifurcaciones.</li>
-<li>&#x2714;&#xFE0F; Permite familiarizarse con tecnolog&#xED;as como MarkDown y Git (GitHub) para despu&#xE9;s aplicarlas con los alumnos en proyectos de grupo o transversales.</li>
+<li>✔️ <strong>Ideal para trabajo en equipo</strong> o en grupo.</li>
+<li>✔️ Homogeneidad en la generación de contenido.</li>
+<li>✔️ Historial y revisión de cambios integrado.</li>
+<li>✔️ <strong>Automatización</strong> en la generación de documentos y despliegue.</li>
+<li>✔️ Permite bifurcaciones.</li>
+<li>✔️ Permite familiarizarse con tecnologías como MarkDown y Git (GitHub) para después aplicarlas con los alumnos en proyectos de grupo o transversales.</li>
 </ul>
 <div style="page-break-after:always;"></div>
-<h2 class="mume-header" id="pre-requisitos">Pre-Requisitos</h2>
-
+<h2 id="pre-requisitos">Pre-Requisitos </h2>
 <ol>
 <li>
 <p>Tener una <strong>cuenta de GitHub</strong> (Especial para profesores)</p>
 <blockquote>
-<p>&#x1F4CC; <strong>Nota:</strong> Se puede utilizar Azure DevOps pero esta opci&#xF3;n no se ha explorado en profundidad y posiblemente precise de extensiones diferentes de VSCode.</p>
+<p>📌 <strong>Nota:</strong> Se puede utilizar Azure DevOps pero esta opción no se ha explorado en profundidad y posiblemente precise de extensiones diferentes de VSCode.</p>
 </blockquote>
 </li>
 <li>
@@ -396,7 +198,7 @@ justo después del front matter
 </li>
 <li>
 <p>Tener instalado <strong><a href="https://code.visualstudio.com/">Visual Studio Code</a></strong>.</p>
-<p>Se recomienda asociar un perfil de VSCode con la cuenta de GitHub y a&#xF1;adir las siguiente extensiones:</p>
+<p>Se recomienda asociar un perfil de VSCode con la cuenta de GitHub y añadir las siguiente extensiones:</p>
 <ul>
 <li>
 <p>Markdown All In One. (Permite editar documentos markdown de forma simple).</p>
@@ -425,34 +227,32 @@ justo después del front matter
 </li>
 </ol>
 <div style="page-break-after:always;"></div>
-<h2 class="mume-header" id="trabajo-b%C3%A1sico-con-markdown">Trabajo b&#xE1;sico con markdown</h2>
-
-<p>La extensi&#xF3;n markdownlint te ayuda ha escribir markdown normalizado, pero como estamos usando una extensi&#xF3;n, no es es muy importante salvo respetar los saltos de l&#xED;nea.</p>
+<h2 id="trabajo-básico-con-markdown">Trabajo básico con markdown </h2>
+<p>La extensión markdownlint te ayuda ha escribir markdown normalizado, pero como estamos usando una extensión, no es es muy importante salvo respetar los saltos de línea.</p>
 <p>En <strong><code>cheatsheet_markdown.pdf</code></strong> dispones de las extensiones apropiadas.</p>
-<p>Tambi&#xE9;n puedes consultar la documentaci&#xF3;n oficial en la <a href="https://shd101wyy.github.io/markdown-preview-enhanced/#/">P&#xE1;gina de Markdown Preview Enhanced</a></p>
+<p>También puedes consultar la documentación oficial en la <a href="https://shd101wyy.github.io/markdown-preview-enhanced/#/">Página de Markdown Preview Enhanced</a></p>
 <blockquote>
-<p>&#x270B; <strong>Importante:</strong></p>
-<p>En la carpeta <strong><code>.vscode/</code></strong> se han pre-definido varios code snippets (fragmentos de c&#xF3;digo) en en fichero <strong><code>FragmentosPernosalizados.code-snippets</code></strong><br>
-Para usarlos, una vez abierto un fichero con extensi&#xF3;n markdown escribiremos <strong><code>mde_</code></strong> seguido de <strong><code>Ctrl + Space</code></strong> que es el (trigger suggestions) en mi KeyMap.</p>
+<p>✋ <strong>Importante:</strong></p>
+<p>En la carpeta <strong><code>.vscode/</code></strong> se han pre-definido varios code snippets (fragmentos de código) en en fichero <strong><code>FragmentosPernosalizados.code-snippets</code></strong><br>
+Para usarlos, una vez abierto un fichero con extensión markdown escribiremos <strong><code>mde_</code></strong> seguido de <strong><code>Ctrl + Space</code></strong> que es el (trigger suggestions) en mi KeyMap.</p>
 </blockquote>
-<h3 class="mume-header" id="elementos-especiales">Elementos especiales</h3>
-
-<p>Funciones matem&#xE1;ticas en l&#xED;nea <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">f(x) = x^2+3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span></p>
+<h3 id="elementos-especiales">Elementos especiales </h3>
+<p>Funciones matemáticas en línea <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">f(x) = x^2+3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span></span></span></p>
 <p>Con display en bloque:</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">f(x) = x^2+3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.9474379999999999em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span></span></p>
-<p>C&#xF3;digo indicando el lenguaje a renderizar:</p>
-<pre data-role="codeBlock" data-info="txt" class="language-txt">    ```csharp
-    string AYUDA = &quot;csharp{.line-numbers} para numerar las l&#xED;neas.&quot; +
-                &quot;csharp{highlight=2} para resaltar la l&#xED;nea 2&quot; +
-                &quot;csharp{highlight=[2,5-7]} para resaltar la 2 y de la 5 a la 7&quot; +
-                &quot;csharp{highlight=1; .line-numbers} para hacer ambas cosas&quot;;
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">f(x) = x^2+3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.9474em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span></span></span></span></p>
+<p>Código indicando el lenguaje a renderizar:</p>
+<pre data-role="codeBlock" data-info="txt" class="language-txt txt"><code>    ```csharp
+    string AYUDA = "csharp{.line-numbers} para numerar las líneas." +
+                "csharp{highlight=2} para resaltar la línea 2" +
+                "csharp{highlight=[2,5-7]} para resaltar la 2 y de la 5 a la 7" +
+                "csharp{highlight=1; .line-numbers} para hacer ambas cosas";
     ```
-</pre><pre data-role="codeBlock" data-info="csharp" class="language-csharp">    <span class="token class-name"><span class="token keyword">string</span></span> AYUDA <span class="token operator">=</span> <span class="token string">&quot;csharp{.line-numbers} para numerar las l&#xED;neas.&quot;</span> <span class="token operator">+</span>
-                <span class="token string">&quot;csharp{highlight=2} para resaltar la l&#xED;nea 2&quot;</span> <span class="token operator">+</span>
-                <span class="token string">&quot;csharp{highlight=[2,5-7]} para resaltar la 2 y de la 5 a la 7&quot;</span> <span class="token operator">+</span>
-                <span class="token string">&quot;csharp{highlight=1; .line-numbers} para hacer ambas cosas&quot;</span><span class="token punctuation">;</span>
-</pre><p>Diagramas de Graphviz, PlantUML, Mermaid, etc.</p>
-<pre data-role="codeBlock" data-info="txt" class="language-txt">    ```puml {align=&quot;center&quot;, style=&quot;zoom:1&quot;}
+</code></pre><pre data-role="codeBlock" data-info="csharp" class="language-csharp csharp"><code>    <span class="token class-name"><span class="token keyword keyword-string">string</span></span> AYUDA <span class="token operator">=</span> <span class="token string">"csharp{.line-numbers} para numerar las líneas."</span> <span class="token operator">+</span>
+                <span class="token string">"csharp{highlight=2} para resaltar la línea 2"</span> <span class="token operator">+</span>
+                <span class="token string">"csharp{highlight=[2,5-7]} para resaltar la 2 y de la 5 a la 7"</span> <span class="token operator">+</span>
+                <span class="token string">"csharp{highlight=1; .line-numbers} para hacer ambas cosas"</span><span class="token punctuation">;</span>
+</code></pre><p>Diagramas de Graphviz, PlantUML, Mermaid, etc.</p>
+<pre data-role="codeBlock" data-info="txt" class="language-txt txt"><code>    ```puml {align="center", style="zoom:1"}
     @startmindmap
     &lt;style&gt;
     mindmapDiagram {
@@ -477,577 +277,545 @@ Para usarlos, una vez abierto un fichero con extensi&#xF3;n markdown escribiremo
 
     @endmindmap
     ```
-</pre><p align="center" style="zoom:1"><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="288px" preserveAspectRatio="none" style="width:394px;height:288px;" version="1.1" viewBox="0 0 394 288" width="394px" zoomAndPan="magnify"><defs><filter height="300%" id="f9hh5m7ikbw50" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFAFA" filter="url(#f9hh5m7ikbw50)" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="75" x="10" y="120.1233"/><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="45" x="25" y="148.2551">Debian</text><rect fill="#FFFFFF" filter="url(#f9hh5m7ikbw50)" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="75" x="145" y="101.0986"/><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="45" x="160" y="129.2305">Ubuntu</text><rect fill="#FFFFFF" filter="url(#f9hh5m7ikbw50)" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="93" x="280" y="25"/><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="63" x="295" y="53.1318">Linux Mint</text><path d="M220,124.1479 L230,124.1479 C245,124.1479 255,48.0493 270,48.0493 L280,48.0493 " fill="none" style="stroke:#000000;stroke-width:1.0;"/><rect fill="#FFFFFF" filter="url(#f9hh5m7ikbw50)" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="83" x="280" y="101.0986"/><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="53" x="295" y="129.2305">Kubuntu</text><path d="M220,124.1479 L230,124.1479 C245,124.1479 255,124.1479 270,124.1479 L280,124.1479 " fill="none" style="stroke:#000000;stroke-width:1.0;"/><rect fill="#FFFFFF" filter="url(#f9hh5m7ikbw50)" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="95" x="280" y="177.1973"/><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="65" x="295" y="205.3291">KDE Neon</text><path d="M220,124.1479 L230,124.1479 C245,124.1479 255,200.2466 270,200.2466 L280,200.2466 " fill="none" style="stroke:#000000;stroke-width:1.0;"/><path d="M85,143.1726 L95,143.1726 C110,143.1726 120,124.1479 135,124.1479 L145,124.1479 " fill="none" style="stroke:#000000;stroke-width:1.0;"/><rect fill="#FFFFFF" filter="url(#f9hh5m7ikbw50)" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="90" x="145" y="215.2466"/><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="60" x="160" y="243.3784">SteamOS</text><path d="M85,143.1726 L95,143.1726 C110,143.1726 120,238.2959 135,238.2959 L145,238.2959 " fill="none" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[f78ad683edb42003f9a08b85c4d59795]
-@startmindmap
-<style>
-  mindmapDiagram {
-    Linecolor black
-    FontName Arial
-    FontSize 14
-    node {
-            Padding 15
-            Margin 15
-            HorizontalAlignment center
-            BackGroundColor white
-         }
-  }
-</style>
-
-*[#snow] Debian
-** Ubuntu
-*** Linux Mint
-*** Kubuntu
-*** KDE Neon
-** SteamOS
-
-@endmindmap
-
-PlantUML version 1.2020.26(Mon Dec 21 18:45:07 CET 2020)
-(GPL source distribution)
-Java Runtime: OpenJDK Runtime Environment
-JVM: OpenJDK 64-Bit Server VM
-Default Encoding: UTF-8
-Language: es
-Country: ES
---></g></svg></p><div style="page-break-after:always;"></div>
-<p>Uso directo de HTML embebido con estilos definidos en el fichero importado justo despu&#xE9;s del frontmatter denominado <strong><code>EstilosPersonalizadosMarkdownEnhanced.less</code></strong>. Se puede utilizar para maquetaciones complejas.</p>
-<pre data-role="codeBlock" data-info="html" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>contenedor<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>fondo<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>abre_comilla<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>&quot;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>cierra_comilla<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>&quot;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>cita<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Esto es una cita.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>autor<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>- Aqu&#xED; va el autor.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre><p align="center" style="zoom:1" class="puml"><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="288px" preserveAspectRatio="none" style="width:387px;height:288px;background:#FFFFFF;" version="1.1" viewBox="0 0 387 288" width="387px" zoomAndPan="magnify"><defs></defs><g><rect fill="#FFFAFA" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="75" x="10" y="120.1233"></rect><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="45" x="25" y="148.2551">Debian</text><rect fill="#FFFFFF" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="75" x="145" y="101.0986"></rect><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="45" x="160" y="129.2305">Ubuntu</text><rect fill="#FFFFFF" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="93" x="280" y="25"></rect><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="63" x="295" y="53.1318">Linux Mint</text><path d="M220,124.1479 L230,124.1479 C245,124.1479 255,48.0493 270,48.0493 L280,48.0493 " fill="none" style="stroke:#000000;stroke-width:1.0;"></path><rect fill="#FFFFFF" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="83" x="280" y="101.0986"></rect><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="53" x="295" y="129.2305">Kubuntu</text><path d="M220,124.1479 L230,124.1479 C245,124.1479 255,124.1479 270,124.1479 L280,124.1479 " fill="none" style="stroke:#000000;stroke-width:1.0;"></path><rect fill="#FFFFFF" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="95" x="280" y="177.1973"></rect><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="65" x="295" y="205.3291">KDE Neon</text><path d="M220,124.1479 L230,124.1479 C245,124.1479 255,200.2466 270,200.2466 L280,200.2466 " fill="none" style="stroke:#000000;stroke-width:1.0;"></path><path d="M85,143.1726 L95,143.1726 C110,143.1726 120,124.1479 135,124.1479 L145,124.1479 " fill="none" style="stroke:#000000;stroke-width:1.0;"></path><rect fill="#FFFFFF" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="90" x="145" y="215.2466"></rect><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="60" x="160" y="243.3784">SteamOS</text><path d="M85,143.1726 L95,143.1726 C110,143.1726 120,238.2959 135,238.2959 L145,238.2959 " fill="none" style="stroke:#000000;stroke-width:1.0;"></path><!--SRC=[NL5TJm8n47plhzZ45oJn0qIZ5sCK3Z300V705-F3ShUU6- -sfDVYL_plbWj8i4cRxdHsiZEzBIqQMx2a1IxLTMa_SxfH01iaPCmC5l3j8O0H2oKwrmOMEIPl5TRJOiTO4DmPnlmFYlcBeD6gQj4fRHIsQuffof91utmFZj1aBF_HUstuosjYVfTp9WM9XSGVPFPeRJzItsWdQQUQyVsLBUqOFsgzhqys5bNzwQ0K_VuC8IqOHTNhC5yuiSxVwckhxWCY5bkLGxTx6ePT69EkEc9BM4nYfMx9vxL9KKrp53kFHh0YKxBsXewRfyspuqQprZCCayH2yzIx35fNmNaBEjru1cl2eQhrfoCejJC9GSgbDRnmrYiSgW6k41xy45nG09CboI0SRW7eoegDhg9HWyTeHxXe7RNPGap6pmAFaGhf1LrkVKUYrryGm7pMExfK8vJCOUQrgLGTdw8rdm5qury0]--></g></svg></p><div style="page-break-after:always;"></div>
+<p>Uso directo de HTML embebido con estilos definidos en el fichero importado justo después del frontmatter denominado <strong><code>EstilosPersonalizadosMarkdownEnhanced.less</code></strong>. Se puede utilizar para maquetaciones complejas.</p>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contenedor<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fondo<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>abre_comilla<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>"<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cierra_comilla<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>"<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cita<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Esto es una cita.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>autor<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>- Aquí va el autor.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-</pre><div class="contenedor">
+</code></pre><div class="contenedor">
     <div class="fondo">
-        <div class="abre_comilla">&quot;</div>
-        <div class="cierra_comilla">&quot;</div>
+        <div class="abre_comilla">"</div>
+        <div class="cierra_comilla">"</div>
         <div class="cita">Esto es una cita.</div>
-        <div class="autor">- Aqu&#xED; va el autor.</div>
+        <div class="autor">- Aquí va el autor.</div>
     </div>
 </div>
-<p>Importar c&#xF3;digo <strong>renderizado al vuelo</strong> a gr&#xE1;fico vectorial.</p>
-<pre data-role="codeBlock" data-info="txt" class="language-txt">@import &quot;assets/linux_kernel.dot&quot; {align=&quot;center&quot;, style=&quot;zoom:0.4&quot;}
-</pre><p align="center" style="zoom:0.4"><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+<p>Importar código <strong>renderizado al vuelo</strong> a gráfico vectorial.</p>
+<pre data-role="codeBlock" data-info="txt" class="language-txt txt"><code>@import "assets/linux_kernel.dot" {align="center", style="zoom:0.4"}
+</code></pre><p></p><p align="center" style="zoom:0.4" class="dot"><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
 
-<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+<!-- Generated by graphviz version 9.0.0 (20230911.1827)
  -->
 <!-- Title: matrix Pages: 1 -->
-<svg width="1486pt" height="806pt" viewBox="0.00 0.00 1485.59 805.80" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 801.8)">
+<svg width="1486pt" height="806pt" viewBox="0.00 0.00 1485.79 806.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 802)">
 <title>matrix</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-801.8 1481.593,-801.8 1481.593,4 -4,4"/>
+<polygon fill="white" stroke="none" points="-4,4 -4,-802 1481.79,-802 1481.79,4 -4,4"></polygon>
 <!-- system_ -->
 <!-- SCI -->
 <g id="node3" class="node">
 <title>SCI</title>
-<ellipse fill="#d9e7ee" stroke="#e27dd6" stroke-width="6" cx="339" cy="-592" rx="79" ry="36"/>
-<text text-anchor="middle" x="339" y="-584.8" font-family="Ubuntu" font-size="24.00" fill="#000000">System calls</text>
+<ellipse fill="#d9e7ee" stroke="#e27dd6" stroke-width="6" cx="339.2" cy="-592" rx="79.2" ry="36"></ellipse>
+<text text-anchor="middle" x="339.2" y="-584.8" font-family="Ubuntu" font-size="24.00">System calls</text>
 </g>
 <!-- system_&#45;&gt;SCI -->
 <!-- system -->
 <g id="node2" class="node">
 <title>system</title>
-<polygon fill="#ffffff" stroke="#e27dd6" stroke-width="6" points="411,-735.8 267,-735.8 267,-692.8 411,-692.8 411,-735.8"/>
-<text text-anchor="middle" x="339" y="-707.1" font-family="Ubuntu" font-size="24.00" fill="#000000">system</text>
+<polygon fill="white" stroke="#e27dd6" stroke-width="6" points="411.2,-736 267.2,-736 267.2,-692.8 411.2,-692.8 411.2,-736"></polygon>
+<text text-anchor="middle" x="339.2" y="-707.2" font-family="Ubuntu" font-size="24.00">system</text>
 </g>
 <!-- system&#45;&gt;system_ -->
 <g id="edge1" class="edge">
 <title>system-&gt;system_</title>
-<path fill="none" stroke="#e27dd6" stroke-width="6" d="M339,-692.6874C339,-683.2567 339,-672.9176 339,-666.5428"/>
-<polygon fill="#e27dd6" stroke="#e27dd6" stroke-width="6" points="341.6251,-666.1723 339,-661.1723 336.3751,-666.1724 341.6251,-666.1723"/>
+<path fill="none" stroke="#e27dd6" stroke-width="6" d="M339.2,-692.55C339.2,-683.65 339.2,-673.91 339.2,-667.73"></path>
+<polygon fill="#e27dd6" stroke="#e27dd6" stroke-width="6" points="341.83,-673.04 339.2,-668.04 336.58,-673.04 341.83,-673.04"></polygon>
 </g>
 <!-- networking -->
 <g id="node10" class="node">
 <title>networking</title>
-<polygon fill="#ffffff" stroke="#61c2c5" stroke-width="6" points="591,-735.8 447,-735.8 447,-692.8 591,-692.8 591,-735.8"/>
-<text text-anchor="middle" x="519" y="-707.1" font-family="Ubuntu" font-size="24.00" fill="#000000">networking</text>
+<polygon fill="white" stroke="#61c2c5" stroke-width="6" points="591.2,-736 447.2,-736 447.2,-692.8 591.2,-692.8 591.2,-736"></polygon>
+<text text-anchor="middle" x="519.2" y="-707.2" font-family="Ubuntu" font-size="24.00">networking</text>
 </g>
 <!-- system&#45;&gt;networking -->
 <!-- sysfs -->
 <g id="node4" class="node">
 <title>sysfs</title>
-<polygon fill="#b2d3e4" stroke="#e27dd6" stroke-width="6" points="418,-542 260,-542 260,-470 418,-470 418,-542"/>
-<text text-anchor="middle" x="339" y="-513.2" font-family="Ubuntu" font-size="24.00" fill="#000000">proc, sysfs,</text>
-<text text-anchor="middle" x="339" y="-484.4" font-family="Ubuntu" font-size="24.00" fill="#000000">file systems</text>
+<polygon fill="#b2d3e4" stroke="#e27dd6" stroke-width="6" points="418.4,-542 260,-542 260,-470 418.4,-470 418.4,-542"></polygon>
+<text text-anchor="middle" x="339.2" y="-513.2" font-family="Ubuntu" font-size="24.00">proc, sysfs,</text>
+<text text-anchor="middle" x="339.2" y="-484.4" font-family="Ubuntu" font-size="24.00">file systems</text>
 </g>
 <!-- SCI&#45;&gt;sysfs -->
 <g id="edge2" class="edge">
 <title>SCI-&gt;sysfs</title>
-<path fill="none" stroke="#e27dd6" stroke-width="6" d="M339,-555.5283C339,-551.1334 339,-546.6454 339,-542.2536"/>
+<path fill="none" stroke="#e27dd6" stroke-width="6" d="M339.2,-555.86C339.2,-551.37 339.2,-546.76 339.2,-542.27"></path>
 </g>
 <!-- DM -->
 <g id="node5" class="node">
 <title>DM</title>
-<polygon fill="#91b5c9" stroke="#e27dd6" stroke-width="6" points="411,-407.9878 411,-432.0122 368.8234,-449 309.1766,-449 267,-432.0122 267,-407.9878 309.1766,-391 368.8234,-391 411,-407.9878"/>
-<text text-anchor="middle" x="339" y="-426" font-family="Ubuntu" font-size="20.00" fill="#000000">Device</text>
-<text text-anchor="middle" x="339" y="-402" font-family="Ubuntu" font-size="20.00" fill="#000000">Model</text>
+<polygon fill="#91b5c9" stroke="#e27dd6" stroke-width="6" points="411.2,-408.07 411.2,-431.93 369.02,-448.8 309.38,-448.8 267.2,-431.93 267.2,-408.07 309.38,-391.2 369.02,-391.2 411.2,-408.07"></polygon>
+<text text-anchor="middle" x="339.2" y="-426" font-family="Ubuntu" font-size="20.00">Device</text>
+<text text-anchor="middle" x="339.2" y="-402" font-family="Ubuntu" font-size="20.00">Model</text>
 </g>
 <!-- sysfs&#45;&gt;DM -->
 <g id="edge3" class="edge">
 <title>sysfs-&gt;DM</title>
-<path fill="none" stroke="#e27dd6" stroke-width="6" d="M339,-469.5283C339,-462.7528 339,-455.756 339,-449.2319"/>
+<path fill="none" stroke="#e27dd6" stroke-width="6" d="M339.2,-469.86C339.2,-462.94 339.2,-455.76 339.2,-449.11"></path>
 </g>
 <!-- log_sys -->
 <g id="node6" class="node">
 <title>log_sys</title>
-<polygon fill="#6a9ab1" stroke="#e27dd6" stroke-width="6" points="418,-370 260,-370 260,-266 418,-266 418,-370"/>
-<text text-anchor="middle" x="339" y="-348" font-family="Ubuntu" font-size="20.00" fill="#000000">system run,</text>
-<text text-anchor="middle" x="339" y="-324" font-family="Ubuntu" font-size="20.00" fill="#000000">modules,</text>
-<text text-anchor="middle" x="339" y="-300" font-family="Ubuntu" font-size="20.00" fill="#000000">generic</text>
-<text text-anchor="middle" x="339" y="-276" font-family="Ubuntu" font-size="20.00" fill="#000000">HW access </text>
+<polygon fill="#6a9ab1" stroke="#e27dd6" stroke-width="6" points="418.4,-370 260,-370 260,-266 418.4,-266 418.4,-370"></polygon>
+<text text-anchor="middle" x="339.2" y="-348" font-family="Ubuntu" font-size="20.00">system run,</text>
+<text text-anchor="middle" x="339.2" y="-324" font-family="Ubuntu" font-size="20.00">modules,</text>
+<text text-anchor="middle" x="339.2" y="-300" font-family="Ubuntu" font-size="20.00">generic</text>
+<text text-anchor="middle" x="339.2" y="-276" font-family="Ubuntu" font-size="20.00">HW access </text>
 </g>
 <!-- DM&#45;&gt;log_sys -->
 <g id="edge4" class="edge">
 <title>DM-&gt;log_sys</title>
-<path fill="none" stroke="#e27dd6" stroke-width="6" d="M339,-390.7709C339,-384.2953 339,-377.2433 339,-370.1614"/>
+<path fill="none" stroke="#e27dd6" stroke-width="6" d="M339.2,-390.88C339.2,-384.41 339.2,-377.33 339.2,-370.22"></path>
 </g>
 <!-- bus_drv -->
 <g id="node7" class="node">
 <title>bus_drv</title>
-<polygon fill="#71809b" stroke="#e27dd6" stroke-width="6" points="418,-248 260,-248 260,-176 418,-176 418,-248"/>
-<text text-anchor="middle" x="339" y="-204.8" font-family="Ubuntu" font-size="24.00" fill="#000000">bus drivers</text>
+<polygon fill="#71809b" stroke="#e27dd6" stroke-width="6" points="418.4,-248 260,-248 260,-176 418.4,-176 418.4,-248"></polygon>
+<text text-anchor="middle" x="339.2" y="-204.8" font-family="Ubuntu" font-size="24.00">bus drivers</text>
 </g>
 <!-- log_sys&#45;&gt;bus_drv -->
 <g id="edge5" class="edge">
 <title>log_sys-&gt;bus_drv</title>
-<path fill="none" stroke="#e27dd6" stroke-width="6" d="M339,-265.9316C339,-259.9629 339,-253.9784 339,-248.2811"/>
+<path fill="none" stroke="#e27dd6" stroke-width="6" d="M339.2,-265.61C339.2,-259.78 339.2,-253.93 339.2,-248.37"></path>
 </g>
 <!-- H2 -->
 <g id="node8" class="node">
 <title>H2</title>
-<polygon fill="#777777" stroke="#e27dd6" stroke-width="6" points="418,-158 260,-158 260,-86 418,-86 418,-158"/>
-<text text-anchor="middle" x="339" y="-128" font-family="Ubuntu" font-size="20.00" fill="#ffffff">busess:</text>
-<text text-anchor="middle" x="339" y="-104" font-family="Ubuntu" font-size="20.00" fill="#ffffff">PCI, USB ...</text>
+<polygon fill="#777777" stroke="#e27dd6" stroke-width="6" points="418.4,-158 260,-158 260,-86 418.4,-86 418.4,-158"></polygon>
+<text text-anchor="middle" x="339.2" y="-128" font-family="Ubuntu" font-size="20.00" fill="white">busess:</text>
+<text text-anchor="middle" x="339.2" y="-104" font-family="Ubuntu" font-size="20.00" fill="white">PCI, USB ...</text>
 </g>
 <!-- bus_drv&#45;&gt;H2 -->
 <g id="edge6" class="edge">
 <title>bus_drv-&gt;H2</title>
-<path fill="none" stroke="#e27dd6" stroke-width="6" d="M339,-175.9121C339,-170.0437 339,-163.9646 339,-158.096"/>
+<path fill="none" stroke="#e27dd6" stroke-width="6" d="M339.2,-175.71C339.2,-169.98 339.2,-164.03 339.2,-158.29"></path>
 </g>
 <!-- networking_ -->
 <!-- sock -->
 <g id="node11" class="node">
 <title>sock</title>
-<ellipse fill="#d9e7ee" stroke="#61c2c5" stroke-width="6" cx="519" cy="-592" rx="79" ry="36"/>
-<text text-anchor="middle" x="519" y="-584.8" font-family="Ubuntu" font-size="24.00" fill="#000000">Sockets</text>
+<ellipse fill="#d9e7ee" stroke="#61c2c5" stroke-width="6" cx="519.2" cy="-592" rx="79.2" ry="36"></ellipse>
+<text text-anchor="middle" x="519.2" y="-584.8" font-family="Ubuntu" font-size="24.00">Sockets</text>
 </g>
 <!-- networking_&#45;&gt;sock -->
 <!-- networking&#45;&gt;networking_ -->
 <g id="edge7" class="edge">
 <title>networking-&gt;networking_</title>
-<path fill="none" stroke="#61c2c5" stroke-width="6" d="M519,-692.6874C519,-683.2567 519,-672.9176 519,-666.5428"/>
-<polygon fill="#61c2c5" stroke="#61c2c5" stroke-width="6" points="521.6251,-666.1723 519,-661.1723 516.3751,-666.1724 521.6251,-666.1723"/>
+<path fill="none" stroke="#61c2c5" stroke-width="6" d="M519.2,-692.55C519.2,-683.65 519.2,-673.91 519.2,-667.73"></path>
+<polygon fill="#61c2c5" stroke="#61c2c5" stroke-width="6" points="521.83,-673.04 519.2,-668.04 516.58,-673.04 521.83,-673.04"></polygon>
 </g>
 <!-- storage -->
 <g id="node18" class="node">
 <title>storage</title>
-<polygon fill="#ffffff" stroke="#8383cc" stroke-width="6" points="771,-735.8 627,-735.8 627,-692.8 771,-692.8 771,-735.8"/>
-<text text-anchor="middle" x="699" y="-707.1" font-family="Ubuntu" font-size="24.00" fill="#000000">storage</text>
+<polygon fill="white" stroke="#8383cc" stroke-width="6" points="771.2,-736 627.2,-736 627.2,-692.8 771.2,-692.8 771.2,-736"></polygon>
+<text text-anchor="middle" x="699.2" y="-707.2" font-family="Ubuntu" font-size="24.00">storage</text>
 </g>
 <!-- networking&#45;&gt;storage -->
 <!-- prot_fam -->
 <g id="node12" class="node">
 <title>prot_fam</title>
-<polygon fill="#b2d3e4" stroke="#61c2c5" stroke-width="6" points="598,-542 440,-542 440,-470 598,-470 598,-542"/>
-<text text-anchor="middle" x="519" y="-513.2" font-family="Ubuntu" font-size="24.00" fill="#000000">protocol</text>
-<text text-anchor="middle" x="519" y="-484.4" font-family="Ubuntu" font-size="24.00" fill="#000000">families</text>
+<polygon fill="#b2d3e4" stroke="#61c2c5" stroke-width="6" points="598.4,-542 440,-542 440,-470 598.4,-470 598.4,-542"></polygon>
+<text text-anchor="middle" x="519.2" y="-513.2" font-family="Ubuntu" font-size="24.00">protocol</text>
+<text text-anchor="middle" x="519.2" y="-484.4" font-family="Ubuntu" font-size="24.00">families</text>
 </g>
 <!-- sock&#45;&gt;prot_fam -->
 <g id="edge8" class="edge">
 <title>sock-&gt;prot_fam</title>
-<path fill="none" stroke="#61c2c5" stroke-width="6" d="M519,-555.5283C519,-551.1334 519,-546.6454 519,-542.2536"/>
+<path fill="none" stroke="#61c2c5" stroke-width="6" d="M519.2,-555.86C519.2,-551.37 519.2,-546.76 519.2,-542.27"></path>
 </g>
 <!-- log_prot -->
 <g id="node13" class="node">
 <title>log_prot</title>
-<polygon fill="#6a9ab1" stroke="#61c2c5" stroke-width="6" points="598,-354 440,-354 440,-282 598,-282 598,-354"/>
-<text text-anchor="middle" x="519" y="-325.2" font-family="Ubuntu" font-size="24.00" fill="#000000">protocols:</text>
-<text text-anchor="middle" x="519" y="-296.4" font-family="Ubuntu" font-size="24.00" fill="#000000">TCP, UDP, IP</text>
+<polygon fill="#6a9ab1" stroke="#61c2c5" stroke-width="6" points="598.4,-354 440,-354 440,-282 598.4,-282 598.4,-354"></polygon>
+<text text-anchor="middle" x="519.2" y="-325.2" font-family="Ubuntu" font-size="24.00">protocols:</text>
+<text text-anchor="middle" x="519.2" y="-296.4" font-family="Ubuntu" font-size="24.00">TCP, UDP, IP</text>
 </g>
 <!-- prot_fam&#45;&gt;log_prot -->
 <g id="edge9" class="edge">
 <title>prot_fam-&gt;log_prot</title>
-<path fill="none" stroke="#61c2c5" stroke-width="6" d="M519,-469.7517C519,-436.4612 519,-387.3923 519,-354.137"/>
+<path fill="none" stroke="#61c2c5" stroke-width="6" d="M519.2,-469.75C519.2,-436.57 519.2,-387.71 519.2,-354.46"></path>
 </g>
 <!-- netif -->
 <g id="node14" class="node">
 <title>netif</title>
-<polygon fill="#71809b" stroke="#61c2c5" stroke-width="6" points="598,-252 440,-252 440,-172 598,-172 598,-252"/>
-<text text-anchor="middle" x="519" y="-230" font-family="Ubuntu" font-size="20.00" fill="#000000">network</text>
-<text text-anchor="middle" x="519" y="-206" font-family="Ubuntu" font-size="20.00" fill="#000000">interfaces</text>
-<text text-anchor="middle" x="519" y="-182" font-family="Ubuntu" font-size="20.00" fill="#000000">and drivers</text>
+<polygon fill="#71809b" stroke="#61c2c5" stroke-width="6" points="598.4,-252 440,-252 440,-172 598.4,-172 598.4,-252"></polygon>
+<text text-anchor="middle" x="519.2" y="-230" font-family="Ubuntu" font-size="20.00">network</text>
+<text text-anchor="middle" x="519.2" y="-206" font-family="Ubuntu" font-size="20.00">interfaces</text>
+<text text-anchor="middle" x="519.2" y="-182" font-family="Ubuntu" font-size="20.00">and drivers</text>
 </g>
 <!-- log_prot&#45;&gt;netif -->
 <g id="edge10" class="edge">
 <title>log_prot-&gt;netif</title>
-<path fill="none" stroke="#61c2c5" stroke-width="6" d="M519,-281.8173C519,-272.2212 519,-261.8046 519,-252.0174"/>
+<path fill="none" stroke="#61c2c5" stroke-width="6" d="M519.2,-281.79C519.2,-272.36 519.2,-262.11 519.2,-252.47"></path>
 </g>
 <!-- net_hw -->
 <g id="node15" class="node">
 <title>net_hw</title>
-<polygon fill="#777777" stroke="#61c2c5" stroke-width="6" points="598,-158 440,-158 440,-86 598,-86 598,-158"/>
-<text text-anchor="middle" x="519" y="-128" font-family="Ubuntu" font-size="20.00" fill="#ffffff">network:</text>
-<text text-anchor="middle" x="519" y="-104" font-family="Ubuntu" font-size="20.00" fill="#ffffff">Ethernet, WiFi ...</text>
+<polygon fill="#777777" stroke="#61c2c5" stroke-width="6" points="598.4,-158 440,-158 440,-86 598.4,-86 598.4,-158"></polygon>
+<text text-anchor="middle" x="519.2" y="-128" font-family="Ubuntu" font-size="20.00" fill="white">network:</text>
+<text text-anchor="middle" x="519.2" y="-104" font-family="Ubuntu" font-size="20.00" fill="white">Ethernet, WiFi ...</text>
 </g>
 <!-- netif&#45;&gt;net_hw -->
 <g id="edge11" class="edge">
 <title>netif-&gt;net_hw</title>
-<path fill="none" stroke="#61c2c5" stroke-width="6" d="M519,-171.7383C519,-167.2452 519,-162.6884 519,-158.2498"/>
+<path fill="none" stroke="#61c2c5" stroke-width="6" d="M519.2,-171.63C519.2,-167.24 519.2,-162.78 519.2,-158.44"></path>
 </g>
 <!-- NFS -->
 <g id="node16" class="node">
 <title>NFS</title>
-<polygon fill="#91b5c9" stroke="#8383cc" stroke-width="6" points="652,-407.9878 652,-432.0122 626.8112,-449 591.1888,-449 566,-432.0122 566,-407.9878 591.1888,-391 626.8112,-391 652,-407.9878"/>
-<text text-anchor="middle" x="609" y="-412.8" font-family="Ubuntu" font-size="24.00" fill="#000000">NFS</text>
+<polygon fill="#91b5c9" stroke="#8383cc" stroke-width="6" points="652.4,-408.07 652.4,-431.93 627.09,-448.8 591.31,-448.8 566,-431.93 566,-408.07 591.31,-391.2 627.09,-391.2 652.4,-408.07"></polygon>
+<text text-anchor="middle" x="609.2" y="-412.8" font-family="Ubuntu" font-size="24.00">NFS</text>
 </g>
 <!-- NFS&#45;&gt;log_prot -->
 <g id="edge12" class="edge">
 <title>NFS-&gt;log_prot</title>
-<path fill="none" stroke="#61c2c5" stroke-width="6" d="M586.2892,-394.2611C575.562,-382.1036 562.574,-367.3839 550.881,-354.1319"/>
+<path fill="none" stroke="#61c2c5" stroke-width="6" d="M586.72,-394.02C575.89,-381.99 562.72,-367.35 550.89,-354.21"></path>
 </g>
 <!-- storage_ -->
 <!-- FS -->
 <g id="node19" class="node">
 <title>FS</title>
-<ellipse fill="#d9e7ee" stroke="#8383cc" stroke-width="6" cx="699" cy="-592" rx="79" ry="36"/>
-<text text-anchor="middle" x="699" y="-599.2" font-family="Ubuntu" font-size="24.00" fill="#000000">files and</text>
-<text text-anchor="middle" x="699" y="-570.4" font-family="Ubuntu" font-size="24.00" fill="#000000">directories</text>
+<ellipse fill="#d9e7ee" stroke="#8383cc" stroke-width="6" cx="699.2" cy="-592" rx="79.2" ry="36"></ellipse>
+<text text-anchor="middle" x="699.2" y="-599.2" font-family="Ubuntu" font-size="24.00">files and</text>
+<text text-anchor="middle" x="699.2" y="-570.4" font-family="Ubuntu" font-size="24.00">directories</text>
 </g>
 <!-- storage_&#45;&gt;FS -->
 <!-- storage&#45;&gt;storage_ -->
 <g id="edge13" class="edge">
 <title>storage-&gt;storage_</title>
-<path fill="none" stroke="#8383cc" stroke-width="6" d="M699,-692.6874C699,-683.2567 699,-672.9176 699,-666.5428"/>
-<polygon fill="#8383cc" stroke="#8383cc" stroke-width="6" points="701.6251,-666.1723 699,-661.1723 696.3751,-666.1724 701.6251,-666.1723"/>
+<path fill="none" stroke="#8383cc" stroke-width="6" d="M699.2,-692.55C699.2,-683.65 699.2,-673.91 699.2,-667.73"></path>
+<polygon fill="#8383cc" stroke="#8383cc" stroke-width="6" points="701.83,-673.04 699.2,-668.04 696.58,-673.04 701.83,-673.04"></polygon>
 </g>
 <!-- memory -->
 <g id="node43" class="node">
 <title>memory</title>
-<polygon fill="#ffffff" stroke="#51bf5b" stroke-width="6" points="1105,-735.8 961,-735.8 961,-692.8 1105,-692.8 1105,-735.8"/>
-<text text-anchor="middle" x="1033" y="-707.1" font-family="Ubuntu" font-size="24.00" fill="#000000">memory</text>
+<polygon fill="white" stroke="#51bf5b" stroke-width="6" points="1105.2,-736 961.2,-736 961.2,-692.8 1105.2,-692.8 1105.2,-736"></polygon>
+<text text-anchor="middle" x="1033.2" y="-707.2" font-family="Ubuntu" font-size="24.00">memory</text>
 </g>
 <!-- storage&#45;&gt;memory -->
 <!-- VFS -->
 <g id="node20" class="node">
 <title>VFS</title>
-<polygon fill="#b2d3e4" stroke="#8383cc" stroke-width="6" points="778,-542 620,-542 620,-470 778,-470 778,-542"/>
-<text text-anchor="middle" x="699" y="-513.2" font-family="Ubuntu" font-size="24.00" fill="#000000">Virtual</text>
-<text text-anchor="middle" x="699" y="-484.4" font-family="Ubuntu" font-size="24.00" fill="#000000">File System</text>
+<polygon fill="#b2d3e4" stroke="#8383cc" stroke-width="6" points="778.4,-542 620,-542 620,-470 778.4,-470 778.4,-542"></polygon>
+<text text-anchor="middle" x="699.2" y="-513.2" font-family="Ubuntu" font-size="24.00">Virtual</text>
+<text text-anchor="middle" x="699.2" y="-484.4" font-family="Ubuntu" font-size="24.00">File System</text>
 </g>
 <!-- FS&#45;&gt;VFS -->
 <g id="edge14" class="edge">
 <title>FS-&gt;VFS</title>
-<path fill="none" stroke="#8383cc" stroke-width="6" d="M699,-555.5283C699,-551.1334 699,-546.6454 699,-542.2536"/>
+<path fill="none" stroke="#8383cc" stroke-width="6" d="M699.2,-555.86C699.2,-551.37 699.2,-546.76 699.2,-542.27"></path>
 </g>
 <!-- VFS&#45;&gt;NFS -->
 <g id="edge15" class="edge">
 <title>VFS-&gt;NFS</title>
-<path fill="none" stroke="#8383cc" stroke-width="6" d="M661.0927,-469.7775C652.0613,-461.1474 642.6388,-452.1437 634.3301,-444.2044"/>
+<path fill="none" stroke="#8383cc" stroke-width="6" d="M661.29,-469.62C652.17,-461.1 642.64,-452.21 634.27,-444.39"></path>
 </g>
 <!-- logFS -->
 <g id="node21" class="node">
 <title>logFS</title>
-<polygon fill="#6a9ab1" stroke="#8383cc" stroke-width="6" points="778,-358 620,-358 620,-278 778,-278 778,-358"/>
-<text text-anchor="middle" x="699" y="-336" font-family="Ubuntu" font-size="20.00" fill="#000000">logical</text>
-<text text-anchor="middle" x="699" y="-312" font-family="Ubuntu" font-size="20.00" fill="#000000">filesystems:</text>
-<text text-anchor="middle" x="699" y="-288" font-family="Ubuntu" font-size="20.00" fill="#000000">ext3, xfs ...</text>
+<polygon fill="#6a9ab1" stroke="#8383cc" stroke-width="6" points="778.4,-358 620,-358 620,-278 778.4,-278 778.4,-358"></polygon>
+<text text-anchor="middle" x="699.2" y="-336" font-family="Ubuntu" font-size="20.00">logical</text>
+<text text-anchor="middle" x="699.2" y="-312" font-family="Ubuntu" font-size="20.00">filesystems:</text>
+<text text-anchor="middle" x="699.2" y="-288" font-family="Ubuntu" font-size="20.00">ext3, xfs ...</text>
 </g>
 <!-- VFS&#45;&gt;logFS -->
 <g id="edge16" class="edge">
 <title>VFS-&gt;logFS</title>
-<path fill="none" stroke="#8383cc" stroke-width="6" d="M699,-469.7517C699,-437.7416 699,-391.1435 699,-358.0425"/>
+<path fill="none" stroke="#8383cc" stroke-width="6" d="M699.2,-469.75C699.2,-437.85 699.2,-391.45 699.2,-358.37"></path>
 </g>
 <!-- PC -->
 <g id="node22" class="node">
 <title>PC</title>
-<polygon fill="#91b5c9" stroke="#51bf5b" stroke-width="6" points="888,-407.9878 888,-432.0122 862.8112,-449 827.1888,-449 802,-432.0122 802,-407.9878 827.1888,-391 862.8112,-391 888,-407.9878"/>
-<text text-anchor="middle" x="845" y="-426" font-family="Ubuntu" font-size="20.00" fill="#000000">page</text>
-<text text-anchor="middle" x="845" y="-402" font-family="Ubuntu" font-size="20.00" fill="#000000">cache</text>
+<polygon fill="#91b5c9" stroke="#51bf5b" stroke-width="6" points="888.4,-408.07 888.4,-431.93 863.09,-448.8 827.31,-448.8 802,-431.93 802,-408.07 827.31,-391.2 863.09,-391.2 888.4,-408.07"></polygon>
+<text text-anchor="middle" x="845.2" y="-426" font-family="Ubuntu" font-size="20.00">page</text>
+<text text-anchor="middle" x="845.2" y="-402" font-family="Ubuntu" font-size="20.00">cache</text>
 </g>
 <!-- VFS&#45;&gt;PC -->
 <g id="edge17" class="edge">
 <title>VFS-&gt;PC</title>
-<path fill="none" stroke="#8383cc" stroke-width="6" d="M760.494,-469.7775C778.2623,-459.3112 796.9635,-448.2955 812.2433,-439.2951"/>
+<path fill="none" stroke="#8383cc" stroke-width="6" d="M760.69,-469.62C778.62,-459.31 797.49,-448.45 812.84,-439.62"></path>
 </g>
 <!-- mmap -->
 <g id="node23" class="node">
 <title>mmap</title>
-<polygon fill="#91b5c9" stroke="#51bf5b" stroke-width="6" points="1105,-407.9878 1105,-432.0122 1062.8234,-449 1003.1766,-449 961,-432.0122 961,-407.9878 1003.1766,-391 1062.8234,-391 1105,-407.9878"/>
-<text text-anchor="middle" x="1033" y="-426" font-family="Ubuntu" font-size="20.00" fill="#000000">memory</text>
-<text text-anchor="middle" x="1033" y="-402" font-family="Ubuntu" font-size="20.00" fill="#000000">mapping</text>
+<polygon fill="#91b5c9" stroke="#51bf5b" stroke-width="6" points="1105.2,-408.07 1105.2,-431.93 1063.02,-448.8 1003.38,-448.8 961.2,-431.93 961.2,-408.07 1003.38,-391.2 1063.02,-391.2 1105.2,-408.07"></polygon>
+<text text-anchor="middle" x="1033.2" y="-426" font-family="Ubuntu" font-size="20.00">memory</text>
+<text text-anchor="middle" x="1033.2" y="-402" font-family="Ubuntu" font-size="20.00">mapping</text>
 </g>
 <!-- VFS&#45;&gt;mmap -->
 <g id="edge18" class="edge">
 <title>VFS-&gt;mmap</title>
-<path fill="none" stroke="#8383cc" stroke-width="6" d="M778.1533,-485.6192C837.0864,-470.4448 916.4233,-450.0167 970.8333,-436.007"/>
+<path fill="none" stroke="#8383cc" stroke-width="6" d="M778.78,-484.99C837.82,-470.14 917.17,-450.18 971.46,-436.53"></path>
 </g>
 <!-- block -->
 <g id="node24" class="node">
 <title>block</title>
-<polygon fill="#71809b" stroke="#8383cc" stroke-width="6" points="778,-252 620,-252 620,-172 778,-172 778,-252"/>
-<text text-anchor="middle" x="699" y="-230" font-family="Ubuntu" font-size="20.00" fill="#000000">Block</text>
-<text text-anchor="middle" x="699" y="-206" font-family="Ubuntu" font-size="20.00" fill="#000000">devices</text>
-<text text-anchor="middle" x="699" y="-182" font-family="Ubuntu" font-size="20.00" fill="#000000">and drivers</text>
+<polygon fill="#71809b" stroke="#8383cc" stroke-width="6" points="778.4,-252 620,-252 620,-172 778.4,-172 778.4,-252"></polygon>
+<text text-anchor="middle" x="699.2" y="-230" font-family="Ubuntu" font-size="20.00">Block</text>
+<text text-anchor="middle" x="699.2" y="-206" font-family="Ubuntu" font-size="20.00">devices</text>
+<text text-anchor="middle" x="699.2" y="-182" font-family="Ubuntu" font-size="20.00">and drivers</text>
 </g>
 <!-- logFS&#45;&gt;block -->
 <g id="edge19" class="edge">
 <title>logFS-&gt;block</title>
-<path fill="none" stroke="#8383cc" stroke-width="6" d="M699,-277.9259C699,-269.4836 699,-260.5752 699,-252.1307"/>
+<path fill="none" stroke="#8383cc" stroke-width="6" d="M699.2,-277.68C699.2,-269.4 699.2,-260.66 699.2,-252.37"></path>
 </g>
 <!-- PA -->
 <g id="node25" class="node">
 <title>PA</title>
-<polygon fill="#71809b" stroke="#51bf5b" stroke-width="6" points="1112,-248 954,-248 954,-176 1112,-176 1112,-248"/>
-<text text-anchor="middle" x="1033" y="-219.2" font-family="Ubuntu" font-size="24.00" fill="#000000">Page</text>
-<text text-anchor="middle" x="1033" y="-190.4" font-family="Ubuntu" font-size="24.00" fill="#000000">Allocator</text>
+<polygon fill="#71809b" stroke="#51bf5b" stroke-width="6" points="1112.4,-248 954,-248 954,-176 1112.4,-176 1112.4,-248"></polygon>
+<text text-anchor="middle" x="1033.2" y="-219.2" font-family="Ubuntu" font-size="24.00">Page</text>
+<text text-anchor="middle" x="1033.2" y="-190.4" font-family="Ubuntu" font-size="24.00">Allocator</text>
 </g>
 <!-- PC&#45;&gt;PA -->
 <g id="edge20" class="edge">
 <title>PC-&gt;PA</title>
-<path fill="none" stroke="#51bf5b" stroke-width="6" d="M868.0525,-394.4951C901.1933,-357.8287 962.463,-290.0409 1000.2798,-248.2011"/>
+<path fill="none" stroke="#51bf5b" stroke-width="6" d="M868.25,-394.5C901.39,-357.83 962.66,-290.04 1000.48,-248.2"></path>
 </g>
 <!-- SW -->
 <g id="node27" class="node">
 <title>SW</title>
-<polygon fill="#91b5c9" stroke="#8383cc" stroke-width="6" points="932,-305.9878 932,-330.0122 906.8112,-347 871.1888,-347 846,-330.0122 846,-305.9878 871.1888,-289 906.8112,-289 932,-305.9878"/>
-<text text-anchor="middle" x="889" y="-310.8" font-family="Ubuntu" font-size="24.00" fill="#000000">Swap</text>
+<polygon fill="#91b5c9" stroke="#8383cc" stroke-width="6" points="932.4,-306.07 932.4,-329.93 907.09,-346.8 871.31,-346.8 846,-329.93 846,-306.07 871.31,-289.2 907.09,-289.2 932.4,-306.07"></polygon>
+<text text-anchor="middle" x="889.2" y="-310.8" font-family="Ubuntu" font-size="24.00">Swap</text>
 </g>
 <!-- mmap&#45;&gt;SW -->
 <g id="edge47" class="edge">
 <title>mmap-&gt;SW</title>
-<path fill="none" stroke="#51bf5b" stroke-width="6" d="M995.9164,-393.7325C971.9167,-376.7327 941.0876,-354.8954 918.7059,-339.0417"/>
+<path fill="none" stroke="#51bf5b" stroke-width="6" d="M996.49,-393.51C972.33,-376.73 941.11,-355.05 918.59,-339.41"></path>
 </g>
 <!-- log_mem -->
 <g id="node57" class="node">
 <title>log_mem</title>
-<polygon fill="#6a9ab1" stroke="#51bf5b" stroke-width="6" points="1112,-354 954,-354 954,-282 1112,-282 1112,-354"/>
-<text text-anchor="middle" x="1033" y="-325.2" font-family="Ubuntu" font-size="24.00" fill="#000000">logical</text>
-<text text-anchor="middle" x="1033" y="-296.4" font-family="Ubuntu" font-size="24.00" fill="#000000">memory</text>
+<polygon fill="#6a9ab1" stroke="#51bf5b" stroke-width="6" points="1112.4,-354 954,-354 954,-282 1112.4,-282 1112.4,-354"></polygon>
+<text text-anchor="middle" x="1033.2" y="-325.2" font-family="Ubuntu" font-size="24.00">logical</text>
+<text text-anchor="middle" x="1033.2" y="-296.4" font-family="Ubuntu" font-size="24.00">memory</text>
 </g>
 <!-- mmap&#45;&gt;log_mem -->
 <g id="edge48" class="edge">
 <title>mmap-&gt;log_mem</title>
-<path fill="none" stroke="#51bf5b" stroke-width="6" d="M1033,-390.7709C1033,-379.3504 1033,-366.1367 1033,-354.1285"/>
+<path fill="none" stroke="#51bf5b" stroke-width="6" d="M1033.2,-390.88C1033.2,-379.56 1033.2,-366.37 1033.2,-354.4"></path>
 </g>
 <!-- H4 -->
 <g id="node26" class="node">
 <title>H4</title>
-<polygon fill="#777777" stroke="#8383cc" stroke-width="6" points="778,-158 620,-158 620,-86 778,-86 778,-158"/>
-<text text-anchor="middle" x="699" y="-128" font-family="Ubuntu" font-size="20.00" fill="#ffffff">storage devices:</text>
-<text text-anchor="middle" x="699" y="-104" font-family="Ubuntu" font-size="20.00" fill="#ffffff">SCSI, NVMe ...</text>
+<polygon fill="#777777" stroke="#8383cc" stroke-width="6" points="778.4,-158 620,-158 620,-86 778.4,-86 778.4,-158"></polygon>
+<text text-anchor="middle" x="699.2" y="-128" font-family="Ubuntu" font-size="20.00" fill="white">storage devices:</text>
+<text text-anchor="middle" x="699.2" y="-104" font-family="Ubuntu" font-size="20.00" fill="white">SCSI, NVMe ...</text>
 </g>
 <!-- block&#45;&gt;H4 -->
 <g id="edge21" class="edge">
 <title>block-&gt;H4</title>
-<path fill="none" stroke="#8383cc" stroke-width="6" d="M699,-171.7383C699,-167.2452 699,-162.6884 699,-158.2498"/>
+<path fill="none" stroke="#8383cc" stroke-width="6" d="M699.2,-171.63C699.2,-167.24 699.2,-162.78 699.2,-158.44"></path>
 </g>
 <!-- H5 -->
 <g id="node62" class="node">
 <title>H5</title>
-<polygon fill="#777777" stroke="#51bf5b" stroke-width="6" points="1112,-158 954,-158 954,-86 1112,-86 1112,-158"/>
-<text text-anchor="middle" x="1033" y="-116" font-family="Ubuntu" font-size="20.00" fill="#ffffff">MMU, RAM</text>
+<polygon fill="#777777" stroke="#51bf5b" stroke-width="6" points="1112.4,-158 954,-158 954,-86 1112.4,-86 1112.4,-158"></polygon>
+<text text-anchor="middle" x="1033.2" y="-116" font-family="Ubuntu" font-size="20.00" fill="white">MMU, RAM</text>
 </g>
 <!-- PA&#45;&gt;H5 -->
 <g id="edge49" class="edge">
 <title>PA-&gt;H5</title>
-<path fill="none" stroke="#51bf5b" stroke-width="6" d="M1033,-175.9121C1033,-170.0437 1033,-163.9646 1033,-158.096"/>
+<path fill="none" stroke="#51bf5b" stroke-width="6" d="M1033.2,-175.71C1033.2,-169.98 1033.2,-164.03 1033.2,-158.29"></path>
 </g>
 <!-- bottom -->
 <g id="node63" class="node">
 <title>bottom</title>
-<text text-anchor="middle" x="699" y="-28.8" font-family="Ubuntu" font-size="24.00" fill="#000000">&#xA9; 2007-2019 Constantine Shulyupin http://www.MakeLinux.net/kernel/diagram</text>
+<text text-anchor="middle" x="699.2" y="-28.8" font-family="Ubuntu" font-size="24.00">© 2007-2019 Constantine Shulyupin http://www.MakeLinux.net/kernel/diagram</text>
 </g>
 <!-- H4&#45;&gt;bottom -->
 <!-- SW&#45;&gt;block -->
 <g id="edge22" class="edge">
 <title>SW-&gt;block</title>
-<path fill="none" stroke="#8383cc" stroke-width="6" d="M855.4692,-299.2933C832.0318,-286.2177 799.8468,-268.2619 770.7589,-252.0339"/>
+<path fill="none" stroke="#8383cc" stroke-width="6" d="M856.1,-298.88C832.71,-286.08 800.46,-268.42 771.27,-252.45"></path>
 </g>
 <!-- processing_ -->
 <!-- proc -->
 <g id="node30" class="node">
 <title>proc</title>
-<ellipse fill="#d9e7ee" stroke="#c46747" stroke-width="6" cx="1213" cy="-592" rx="79" ry="36"/>
-<text text-anchor="middle" x="1213" y="-584.8" font-family="Ubuntu" font-size="24.00" fill="#000000">Processes</text>
+<ellipse fill="#d9e7ee" stroke="#c46747" stroke-width="6" cx="1213.2" cy="-592" rx="79.2" ry="36"></ellipse>
+<text text-anchor="middle" x="1213.2" y="-584.8" font-family="Ubuntu" font-size="24.00">Processes</text>
 </g>
 <!-- processing_&#45;&gt;proc -->
 <!-- processing -->
 <g id="node29" class="node">
 <title>processing</title>
-<polygon fill="#ffffff" stroke="#c46747" stroke-width="6" points="1285,-735.8 1141,-735.8 1141,-692.8 1285,-692.8 1285,-735.8"/>
-<text text-anchor="middle" x="1213" y="-707.1" font-family="Ubuntu" font-size="24.00" fill="#000000">processing</text>
+<polygon fill="white" stroke="#c46747" stroke-width="6" points="1285.2,-736 1141.2,-736 1141.2,-692.8 1285.2,-692.8 1285.2,-736"></polygon>
+<text text-anchor="middle" x="1213.2" y="-707.2" font-family="Ubuntu" font-size="24.00">processing</text>
 </g>
 <!-- processing&#45;&gt;processing_ -->
 <g id="edge23" class="edge">
 <title>processing-&gt;processing_</title>
-<path fill="none" stroke="#c46747" stroke-width="6" d="M1213,-692.6874C1213,-683.2567 1213,-672.9176 1213,-666.5428"/>
-<polygon fill="#c46747" stroke="#c46747" stroke-width="6" points="1215.6251,-666.1723 1213,-661.1723 1210.3751,-666.1724 1215.6251,-666.1723"/>
+<path fill="none" stroke="#c46747" stroke-width="6" d="M1213.2,-692.55C1213.2,-683.65 1213.2,-673.91 1213.2,-667.73"></path>
+<polygon fill="#c46747" stroke="#c46747" stroke-width="6" points="1215.83,-673.04 1213.2,-668.04 1210.58,-673.04 1215.83,-673.04"></polygon>
 </g>
 <!-- HI -->
 <g id="node37" class="node">
 <title>HI</title>
-<polygon fill="#ffffff" stroke="#cfbf57" stroke-width="6" points="1468,-735.8 1324,-735.8 1324,-692.8 1468,-692.8 1468,-735.8"/>
-<text text-anchor="middle" x="1396" y="-720.3" font-family="Ubuntu" font-size="20.00" fill="#000000">human</text>
-<text text-anchor="middle" x="1396" y="-696.3" font-family="Ubuntu" font-size="20.00" fill="#000000">interface</text>
+<polygon fill="white" stroke="#cfbf57" stroke-width="6" points="1468.2,-736 1324.2,-736 1324.2,-692.8 1468.2,-692.8 1468.2,-736"></polygon>
+<text text-anchor="middle" x="1396.2" y="-720.4" font-family="Ubuntu" font-size="20.00">human</text>
+<text text-anchor="middle" x="1396.2" y="-696.4" font-family="Ubuntu" font-size="20.00">interface</text>
 </g>
 <!-- processing&#45;&gt;HI -->
 <!-- Tasks -->
 <g id="node31" class="node">
 <title>Tasks</title>
-<polygon fill="#b2d3e4" stroke="#c46747" stroke-width="6" points="1292,-542 1134,-542 1134,-470 1292,-470 1292,-542"/>
-<text text-anchor="middle" x="1213" y="-498.8" font-family="Ubuntu" font-size="24.00" fill="#000000">Tasks</text>
+<polygon fill="#b2d3e4" stroke="#c46747" stroke-width="6" points="1292.4,-542 1134,-542 1134,-470 1292.4,-470 1292.4,-542"></polygon>
+<text text-anchor="middle" x="1213.2" y="-498.8" font-family="Ubuntu" font-size="24.00">Tasks</text>
 </g>
 <!-- proc&#45;&gt;Tasks -->
 <g id="edge24" class="edge">
 <title>proc-&gt;Tasks</title>
-<path fill="none" stroke="#c46747" stroke-width="6" d="M1213,-555.5283C1213,-551.1334 1213,-546.6454 1213,-542.2536"/>
+<path fill="none" stroke="#c46747" stroke-width="6" d="M1213.2,-555.86C1213.2,-551.37 1213.2,-546.76 1213.2,-542.27"></path>
 </g>
 <!-- sync -->
 <g id="node32" class="node">
 <title>sync</title>
-<polygon fill="#91b5c9" stroke="#c46747" stroke-width="6" points="1285,-409.6447 1285,-430.3553 1242.8234,-445 1183.1766,-445 1141,-430.3553 1141,-409.6447 1183.1766,-395 1242.8234,-395 1285,-409.6447"/>
-<text text-anchor="middle" x="1213" y="-414" font-family="Ubuntu Condensed" font-size="20.00" fill="#000000">synchronization</text>
+<polygon fill="#91b5c9" stroke="#c46747" stroke-width="6" points="1285.2,-409.56 1285.2,-430.44 1243.02,-445.2 1183.38,-445.2 1141.2,-430.44 1141.2,-409.56 1183.38,-394.8 1243.02,-394.8 1285.2,-409.56"></polygon>
+<text text-anchor="middle" x="1213.2" y="-414" font-family="Ubuntu Condensed" font-size="20.00">synchronization</text>
 </g>
 <!-- Tasks&#45;&gt;sync -->
 <g id="edge25" class="edge">
 <title>Tasks-&gt;sync</title>
-<path fill="none" stroke="#c46747" stroke-width="6" d="M1213,-469.5283C1213,-461.2879 1213,-452.72 1213,-445.0734"/>
+<path fill="none" stroke="#c46747" stroke-width="6" d="M1213.2,-469.86C1213.2,-461.68 1213.2,-453.14 1213.2,-445.53"></path>
 </g>
 <!-- sched -->
 <g id="node33" class="node">
 <title>sched</title>
-<polygon fill="#6a9ab1" stroke="#c46747" stroke-width="6" points="1292,-354 1134,-354 1134,-282 1292,-282 1292,-354"/>
-<text text-anchor="middle" x="1213" y="-310.8" font-family="Ubuntu" font-size="24.00" fill="#000000">Scheduler</text>
+<polygon fill="#6a9ab1" stroke="#c46747" stroke-width="6" points="1292.4,-354 1134,-354 1134,-282 1292.4,-282 1292.4,-354"></polygon>
+<text text-anchor="middle" x="1213.2" y="-310.8" font-family="Ubuntu" font-size="24.00">Scheduler</text>
 </g>
 <!-- sync&#45;&gt;sched -->
 <g id="edge26" class="edge">
 <title>sync-&gt;sched</title>
-<path fill="none" stroke="#c46747" stroke-width="6" d="M1213,-394.7865C1213,-382.5157 1213,-367.5421 1213,-354.087"/>
+<path fill="none" stroke="#c46747" stroke-width="6" d="M1213.2,-394.54C1213.2,-382.39 1213.2,-367.51 1213.2,-354.17"></path>
 </g>
 <!-- IRQ -->
 <g id="node34" class="node">
 <title>IRQ</title>
-<polygon fill="#71809b" stroke="#c46747" stroke-width="6" points="1292,-252 1134,-252 1134,-172 1292,-172 1292,-252"/>
-<text text-anchor="middle" x="1213" y="-230" font-family="Ubuntu" font-size="20.00" fill="#000000">interrupts</text>
-<text text-anchor="middle" x="1213" y="-206" font-family="Ubuntu" font-size="20.00" fill="#000000">core,</text>
-<text text-anchor="middle" x="1213" y="-182" font-family="Ubuntu" font-size="20.00" fill="#000000">CPU arch</text>
+<polygon fill="#71809b" stroke="#c46747" stroke-width="6" points="1292.4,-252 1134,-252 1134,-172 1292.4,-172 1292.4,-252"></polygon>
+<text text-anchor="middle" x="1213.2" y="-230" font-family="Ubuntu" font-size="20.00">interrupts</text>
+<text text-anchor="middle" x="1213.2" y="-206" font-family="Ubuntu" font-size="20.00">core,</text>
+<text text-anchor="middle" x="1213.2" y="-182" font-family="Ubuntu" font-size="20.00">CPU arch</text>
 </g>
 <!-- sched&#45;&gt;IRQ -->
 <g id="edge27" class="edge">
 <title>sched-&gt;IRQ</title>
-<path fill="none" stroke="#c46747" stroke-width="6" d="M1213,-281.8173C1213,-272.2212 1213,-261.8046 1213,-252.0174"/>
+<path fill="none" stroke="#c46747" stroke-width="6" d="M1213.2,-281.79C1213.2,-272.36 1213.2,-262.11 1213.2,-252.47"></path>
 </g>
 <!-- CPU -->
 <g id="node35" class="node">
 <title>CPU</title>
-<polygon fill="#777777" stroke="#c46747" stroke-width="6" points="1292,-158 1134,-158 1134,-86 1292,-86 1292,-158"/>
-<text text-anchor="middle" x="1213" y="-116" font-family="Ubuntu" font-size="20.00" fill="#ffffff">CPU</text>
+<polygon fill="#777777" stroke="#c46747" stroke-width="6" points="1292.4,-158 1134,-158 1134,-86 1292.4,-86 1292.4,-158"></polygon>
+<text text-anchor="middle" x="1213.2" y="-116" font-family="Ubuntu" font-size="20.00" fill="white">CPU</text>
 </g>
 <!-- IRQ&#45;&gt;CPU -->
 <g id="edge28" class="edge">
 <title>IRQ-&gt;CPU</title>
-<path fill="none" stroke="#c46747" stroke-width="6" d="M1213,-171.7383C1213,-167.2452 1213,-162.6884 1213,-158.2498"/>
+<path fill="none" stroke="#c46747" stroke-width="6" d="M1213.2,-171.63C1213.2,-167.24 1213.2,-162.78 1213.2,-158.44"></path>
 </g>
 <!-- HI_ -->
 <!-- char -->
 <g id="node38" class="node">
 <title>char</title>
-<ellipse fill="#d9e7ee" stroke="#cfbf57" stroke-width="6" cx="1396" cy="-592" rx="79" ry="36"/>
-<text text-anchor="middle" x="1396" y="-599.2" font-family="Ubuntu" font-size="24.00" fill="#000000">char</text>
-<text text-anchor="middle" x="1396" y="-570.4" font-family="Ubuntu" font-size="24.00" fill="#000000">devices</text>
+<ellipse fill="#d9e7ee" stroke="#cfbf57" stroke-width="6" cx="1396.2" cy="-592" rx="79.2" ry="36"></ellipse>
+<text text-anchor="middle" x="1396.2" y="-599.2" font-family="Ubuntu" font-size="24.00">char</text>
+<text text-anchor="middle" x="1396.2" y="-570.4" font-family="Ubuntu" font-size="24.00">devices</text>
 </g>
 <!-- HI_&#45;&gt;char -->
 <!-- HI&#45;&gt;HI_ -->
 <g id="edge29" class="edge">
 <title>HI-&gt;HI_</title>
-<path fill="none" stroke="#cfbf57" stroke-width="6" d="M1396,-692.6874C1396,-683.2567 1396,-672.9176 1396,-666.5428"/>
-<polygon fill="#cfbf57" stroke="#cfbf57" stroke-width="6" points="1398.6251,-666.1723 1396,-661.1723 1393.3751,-666.1724 1398.6251,-666.1723"/>
+<path fill="none" stroke="#cfbf57" stroke-width="6" d="M1396.2,-692.55C1396.2,-683.65 1396.2,-673.91 1396.2,-667.73"></path>
+<polygon fill="#cfbf57" stroke="#cfbf57" stroke-width="6" points="1398.83,-673.04 1396.2,-668.04 1393.58,-673.04 1398.83,-673.04"></polygon>
 </g>
 <!-- input -->
 <g id="node39" class="node">
 <title>input</title>
-<polygon fill="#b2d3e4" stroke="#cfbf57" stroke-width="6" points="1475,-542 1317,-542 1317,-470 1475,-470 1475,-542"/>
-<text text-anchor="middle" x="1396" y="-513.2" font-family="Ubuntu" font-size="24.00" fill="#000000">input</text>
-<text text-anchor="middle" x="1396" y="-484.4" font-family="Ubuntu" font-size="24.00" fill="#000000">subsystem</text>
+<polygon fill="#b2d3e4" stroke="#cfbf57" stroke-width="6" points="1475.4,-542 1317,-542 1317,-470 1475.4,-470 1475.4,-542"></polygon>
+<text text-anchor="middle" x="1396.2" y="-513.2" font-family="Ubuntu" font-size="24.00">input</text>
+<text text-anchor="middle" x="1396.2" y="-484.4" font-family="Ubuntu" font-size="24.00">subsystem</text>
 </g>
 <!-- char&#45;&gt;input -->
 <g id="edge30" class="edge">
 <title>char-&gt;input</title>
-<path fill="none" stroke="#cfbf57" stroke-width="6" d="M1396,-555.5283C1396,-551.1334 1396,-546.6454 1396,-542.2536"/>
+<path fill="none" stroke="#cfbf57" stroke-width="6" d="M1396.2,-555.86C1396.2,-551.37 1396.2,-546.76 1396.2,-542.27"></path>
 </g>
 <!-- F7 -->
 <g id="node40" class="node">
 <title>F7</title>
-<polygon fill="#6a9ab1" stroke="#cfbf57" stroke-width="6" points="1475,-354 1317,-354 1317,-282 1475,-282 1475,-354"/>
-<text text-anchor="middle" x="1396" y="-325.2" font-family="Ubuntu" font-size="24.00" fill="#000000">HI class</text>
-<text text-anchor="middle" x="1396" y="-296.4" font-family="Ubuntu" font-size="24.00" fill="#000000">drivers</text>
+<polygon fill="#6a9ab1" stroke="#cfbf57" stroke-width="6" points="1475.4,-354 1317,-354 1317,-282 1475.4,-282 1475.4,-354"></polygon>
+<text text-anchor="middle" x="1396.2" y="-325.2" font-family="Ubuntu" font-size="24.00">HI class</text>
+<text text-anchor="middle" x="1396.2" y="-296.4" font-family="Ubuntu" font-size="24.00">drivers</text>
 </g>
 <!-- input&#45;&gt;F7 -->
 <g id="edge31" class="edge">
 <title>input-&gt;F7</title>
-<path fill="none" stroke="#cfbf57" stroke-width="6" d="M1396,-469.7517C1396,-436.4612 1396,-387.3923 1396,-354.137"/>
+<path fill="none" stroke="#cfbf57" stroke-width="6" d="M1396.2,-469.75C1396.2,-436.57 1396.2,-387.71 1396.2,-354.46"></path>
 </g>
 <!-- HID -->
 <g id="node41" class="node">
 <title>HID</title>
-<g id="a_node41"><a href="https://www.kernel.org/doc/html/latest/hid/" title="HI\nperipherals\ndrivers">
-<polygon fill="#71809b" stroke="#cfbf57" stroke-width="6" points="1475,-252 1317,-252 1317,-172 1475,-172 1475,-252"/>
-<text text-anchor="middle" x="1396" y="-230" font-family="Ubuntu" font-size="20.00" fill="#000000">HI</text>
-<text text-anchor="middle" x="1396" y="-206" font-family="Ubuntu" font-size="20.00" fill="#000000">peripherals</text>
-<text text-anchor="middle" x="1396" y="-182" font-family="Ubuntu" font-size="20.00" fill="#000000">drivers</text>
+<g id="a_node41"><a xlink:href="https://www.kernel.org/doc/html/latest/hid/" xlink:title="HI\nperipherals\ndrivers">
+<polygon fill="#71809b" stroke="#cfbf57" stroke-width="6" points="1475.4,-252 1317,-252 1317,-172 1475.4,-172 1475.4,-252"></polygon>
+<text text-anchor="middle" x="1396.2" y="-230" font-family="Ubuntu" font-size="20.00">HI</text>
+<text text-anchor="middle" x="1396.2" y="-206" font-family="Ubuntu" font-size="20.00">peripherals</text>
+<text text-anchor="middle" x="1396.2" y="-182" font-family="Ubuntu" font-size="20.00">drivers</text>
 </a>
 </g>
 </g>
 <!-- F7&#45;&gt;HID -->
 <g id="edge32" class="edge">
 <title>F7-&gt;HID</title>
-<path fill="none" stroke="#cfbf57" stroke-width="6" d="M1396,-281.8173C1396,-272.2212 1396,-261.8046 1396,-252.0174"/>
+<path fill="none" stroke="#cfbf57" stroke-width="6" d="M1396.2,-281.79C1396.2,-272.36 1396.2,-262.11 1396.2,-252.47"></path>
 </g>
 <!-- H7 -->
 <g id="node42" class="node">
 <title>H7</title>
-<polygon fill="#777777" stroke="#cfbf57" stroke-width="6" points="1477.6861,-158 1314.3139,-158 1314.3139,-86 1477.6861,-86 1477.6861,-158"/>
-<text text-anchor="middle" x="1396" y="-128" font-family="Ubuntu" font-size="20.00" fill="#ffffff">display, keyboard,</text>
-<text text-anchor="middle" x="1396" y="-104" font-family="Ubuntu" font-size="20.00" fill="#ffffff">mouse, audio</text>
+<polygon fill="#777777" stroke="#cfbf57" stroke-width="6" points="1477.79,-158 1314.61,-158 1314.61,-86 1477.79,-86 1477.79,-158"></polygon>
+<text text-anchor="middle" x="1396.2" y="-128" font-family="Ubuntu" font-size="20.00" fill="white">display, keyboard,</text>
+<text text-anchor="middle" x="1396.2" y="-104" font-family="Ubuntu" font-size="20.00" fill="white">mouse, audio</text>
 </g>
 <!-- HID&#45;&gt;H7 -->
 <g id="edge33" class="edge">
 <title>HID-&gt;H7</title>
-<path fill="none" stroke="#cfbf57" stroke-width="6" d="M1396,-171.7383C1396,-167.2452 1396,-162.6884 1396,-158.2498"/>
+<path fill="none" stroke="#cfbf57" stroke-width="6" d="M1396.2,-171.63C1396.2,-167.24 1396.2,-162.78 1396.2,-158.44"></path>
 </g>
 <!-- memory&#45;&gt;processing -->
 <!-- memory_ -->
 <!-- memory&#45;&gt;memory_ -->
 <g id="edge50" class="edge">
 <title>memory-&gt;memory_</title>
-<path fill="none" stroke="#51bf5b" stroke-width="6" d="M1033,-692.6874C1033,-683.2567 1033,-672.9176 1033,-666.5428"/>
-<polygon fill="#51bf5b" stroke="#51bf5b" stroke-width="6" points="1035.6251,-666.1723 1033,-661.1723 1030.3751,-666.1724 1035.6251,-666.1723"/>
+<path fill="none" stroke="#51bf5b" stroke-width="6" d="M1033.2,-692.55C1033.2,-683.65 1033.2,-673.91 1033.2,-667.73"></path>
+<polygon fill="#51bf5b" stroke="#51bf5b" stroke-width="6" points="1035.83,-673.04 1033.2,-668.04 1030.58,-673.04 1035.83,-673.04"></polygon>
 </g>
 <!-- functions_ -->
 <!-- functions_&#45;&gt;system -->
 <!-- functions -->
 <g id="node45" class="node">
 <title>functions</title>
-<g id="a_node45"><a href="http://www.makelinux.net/ldd3/chp-1-sect-2.shtml" title="Columns represent main functionalities of the kernel">
-<polygon fill="none" stroke="#c0c0c0" stroke-dasharray="5,2" points="136.5,-735.8 21.5,-735.8 21.5,-692.8 136.5,-692.8 136.5,-735.8"/>
-<text text-anchor="middle" x="79" y="-707.1" font-family="Ubuntu" font-size="24.00" fill="#000000">functions</text>
+<g id="a_node45"><a xlink:href="http://www.makelinux.net/ldd3/chp-1-sect-2.shtml" xlink:title="Columns represent main functionalities of the kernel">
+<polygon fill="none" stroke="gray" stroke-dasharray="5,2" points="136.8,-736 21.6,-736 21.6,-692.8 136.8,-692.8 136.8,-736"></polygon>
+<text text-anchor="middle" x="79.2" y="-707.2" font-family="Ubuntu" font-size="24.00">functions</text>
 </a>
 </g>
 </g>
 <!-- functions&#45;&gt;functions_ -->
 <g id="edge40" class="edge">
 <title>functions-&gt;functions_</title>
-<path fill="none" stroke="#c0c0c0" d="M136.6563,-714.3C156.579,-714.3 176.5017,-714.3 196.4244,-714.3"/>
-<polygon fill="#c0c0c0" stroke="#c0c0c0" points="196.4895,-716.0501 201.4895,-714.3 196.4895,-712.5501 196.4895,-716.0501"/>
+<path fill="none" stroke="gray" d="M136.86,-714.4C156.28,-714.4 175.7,-714.4 195.13,-714.4"></path>
+<polygon fill="gray" stroke="gray" points="194.92,-716.15 199.92,-714.4 194.92,-712.65 194.92,-716.15"></polygon>
 </g>
 <!-- layers -->
 <g id="node64" class="node">
 <title>layers</title>
-<g id="a_node64"><a title="Functionalities are divided to common layers. It is approximate division." href="">
-<polygon fill="#d3d3d3" stroke="#000000" stroke-width="0" points="115.8006,-678.7005 42.1994,-678.7005 42.1994,-642.0995 115.8006,-642.0995 115.8006,-678.7005"/>
-<text text-anchor="middle" x="79" y="-653.2" font-family="Ubuntu" font-size="24.00" fill="#000000">layers</text>
+<g id="a_node64"><a xlink:title="Functionalities are divided to common layers. It is approximate division." href="">
+<polygon fill="lightgray" stroke="black" stroke-width="0" points="115.85,-678.8 42.55,-678.8 42.55,-642 115.85,-642 115.85,-678.8"></polygon>
+<text text-anchor="middle" x="79.2" y="-653.2" font-family="Ubuntu" font-size="24.00">layers</text>
 </a>
 </g>
 </g>
@@ -1056,156 +824,156 @@ Country: ES
 <!-- usr -->
 <g id="node47" class="node">
 <title>usr</title>
-<ellipse fill="#d9e7ee" stroke="#000000" stroke-width="0" cx="79" cy="-592" rx="79" ry="36"/>
-<text text-anchor="middle" x="79" y="-599.2" font-family="Ubuntu" font-size="24.00" fill="#000000">user space</text>
-<text text-anchor="middle" x="79" y="-570.4" font-family="Ubuntu" font-size="24.00" fill="#000000">interfaces</text>
+<ellipse fill="#d9e7ee" stroke="black" stroke-width="0" cx="79.2" cy="-592" rx="79.2" ry="36"></ellipse>
+<text text-anchor="middle" x="79.2" y="-599.2" font-family="Ubuntu" font-size="24.00">user space</text>
+<text text-anchor="middle" x="79.2" y="-570.4" font-family="Ubuntu" font-size="24.00">interfaces</text>
 </g>
 <!-- usr&#45;&gt;usr_ -->
 <g id="edge56" class="edge">
 <title>usr-&gt;usr_</title>
-<path fill="none" stroke="#d9e7ee" stroke-width="6" d="M158.0371,-592C170.8578,-592 183.6785,-592 196.4992,-592"/>
-<polygon fill="#d9e7ee" stroke="#d9e7ee" stroke-width="6" points="196.6048,-594.6251 201.6048,-592 196.6047,-589.3751 196.6048,-594.6251"/>
+<path fill="none" stroke="#d9e7ee" stroke-width="6" d="M158.79,-592C171.04,-592 183.3,-592 195.56,-592"></path>
+<polygon fill="#d9e7ee" stroke="#d9e7ee" stroke-width="6" points="190.51,-594.63 195.51,-592 190.51,-589.38 190.51,-594.63"></polygon>
 </g>
 <!-- virt -->
 <g id="node51" class="node">
 <title>virt</title>
-<polygon fill="#b2d3e4" stroke="#000000" stroke-width="0" points="158,-542 0,-542 0,-470 158,-470 158,-542"/>
-<text text-anchor="middle" x="79" y="-513.2" font-family="Ubuntu" font-size="24.00" fill="#000000">virtual</text>
-<text text-anchor="middle" x="79" y="-484.4" font-family="Ubuntu" font-size="24.00" fill="#000000">subsystems</text>
+<polygon fill="#b2d3e4" stroke="black" stroke-width="0" points="158.4,-542 0,-542 0,-470 158.4,-470 158.4,-542"></polygon>
+<text text-anchor="middle" x="79.2" y="-513.2" font-family="Ubuntu" font-size="24.00">virtual</text>
+<text text-anchor="middle" x="79.2" y="-484.4" font-family="Ubuntu" font-size="24.00">subsystems</text>
 </g>
 <!-- usr&#45;&gt;virt -->
 <g id="edge57" class="edge">
 <title>usr-&gt;virt</title>
-<path fill="none" stroke="#d9e7ee" stroke-width="6" d="M79,-555.5283C79,-551.1334 79,-546.6454 79,-542.2536"/>
+<path fill="none" stroke="#d9e7ee" stroke-width="6" d="M79.2,-555.86C79.2,-551.37 79.2,-546.76 79.2,-542.27"></path>
 </g>
 <!-- MA -->
 <g id="node48" class="node">
 <title>MA</title>
-<ellipse fill="#d9e7ee" stroke="#51bf5b" stroke-width="6" cx="1033" cy="-592" rx="79" ry="36"/>
-<text text-anchor="middle" x="1033" y="-599.2" font-family="Ubuntu" font-size="24.00" fill="#000000">memory</text>
-<text text-anchor="middle" x="1033" y="-570.4" font-family="Ubuntu" font-size="24.00" fill="#000000">access</text>
+<ellipse fill="#d9e7ee" stroke="#51bf5b" stroke-width="6" cx="1033.2" cy="-592" rx="79.2" ry="36"></ellipse>
+<text text-anchor="middle" x="1033.2" y="-599.2" font-family="Ubuntu" font-size="24.00">memory</text>
+<text text-anchor="middle" x="1033.2" y="-570.4" font-family="Ubuntu" font-size="24.00">access</text>
 </g>
 <!-- VM -->
 <g id="node52" class="node">
 <title>VM</title>
-<polygon fill="#b2d3e4" stroke="#51bf5b" stroke-width="6" points="1112,-542 954,-542 954,-470 1112,-470 1112,-542"/>
-<text text-anchor="middle" x="1033" y="-513.2" font-family="Ubuntu" font-size="24.00" fill="#000000">Virtual</text>
-<text text-anchor="middle" x="1033" y="-484.4" font-family="Ubuntu" font-size="24.00" fill="#000000">memory</text>
+<polygon fill="#b2d3e4" stroke="#51bf5b" stroke-width="6" points="1112.4,-542 954,-542 954,-470 1112.4,-470 1112.4,-542"></polygon>
+<text text-anchor="middle" x="1033.2" y="-513.2" font-family="Ubuntu" font-size="24.00">Virtual</text>
+<text text-anchor="middle" x="1033.2" y="-484.4" font-family="Ubuntu" font-size="24.00">memory</text>
 </g>
 <!-- MA&#45;&gt;VM -->
 <g id="edge51" class="edge">
 <title>MA-&gt;VM</title>
-<path fill="none" stroke="#51bf5b" stroke-width="6" d="M1033,-555.5283C1033,-551.1334 1033,-546.6454 1033,-542.2536"/>
+<path fill="none" stroke="#51bf5b" stroke-width="6" d="M1033.2,-555.86C1033.2,-551.37 1033.2,-546.76 1033.2,-542.27"></path>
 </g>
 <!-- memory_&#45;&gt;MA -->
 <!-- D0 -->
 <!-- virt&#45;&gt;D0 -->
 <g id="edge58" class="edge">
 <title>virt-&gt;D0</title>
-<path fill="none" stroke="#b2d3e4" stroke-width="6" d="M158.2773,-506C170.9426,-506 183.6079,-506 196.2731,-506"/>
-<polygon fill="#b2d3e4" stroke="#b2d3e4" stroke-width="6" points="196.3169,-508.6251 201.3168,-506 196.3168,-503.3751 196.3169,-508.6251"/>
+<path fill="none" stroke="#b2d3e4" stroke-width="6" d="M158.48,-506C170.69,-506 182.91,-506 195.13,-506"></path>
+<polygon fill="#b2d3e4" stroke="#b2d3e4" stroke-width="6" points="190.06,-508.63 195.06,-506 190.06,-503.38 190.06,-508.63"></polygon>
 </g>
 <!-- bridges -->
 <g id="node54" class="node">
 <title>bridges</title>
-<polygon fill="#91b5c9" stroke="#000000" stroke-width="0" points="158,-405.0883 158,-434.9117 111.7229,-456 46.2771,-456 0,-434.9117 0,-405.0883 46.2771,-384 111.7229,-384 158,-405.0883"/>
-<text text-anchor="middle" x="79" y="-412.8" font-family="Ubuntu" font-size="24.00" fill="#000000">bridges</text>
+<polygon fill="#91b5c9" stroke="black" stroke-width="0" points="158.4,-405.09 158.4,-434.91 112.01,-456 46.39,-456 0,-434.91 0,-405.09 46.39,-384 112.01,-384 158.4,-405.09"></polygon>
+<text text-anchor="middle" x="79.2" y="-412.8" font-family="Ubuntu" font-size="24.00">bridges</text>
 </g>
 <!-- virt&#45;&gt;bridges -->
 <g id="edge59" class="edge">
 <title>virt-&gt;bridges</title>
-<path fill="none" stroke="#b2d3e4" stroke-width="6" d="M79,-469.5283C79,-465.1334 79,-460.6454 79,-456.2536"/>
+<path fill="none" stroke="#b2d3e4" stroke-width="6" d="M79.2,-469.86C79.2,-465.37 79.2,-460.76 79.2,-456.27"></path>
 </g>
 <!-- VM&#45;&gt;mmap -->
 <g id="edge52" class="edge">
 <title>VM-&gt;mmap</title>
-<path fill="none" stroke="#51bf5b" stroke-width="6" d="M1033,-469.5283C1033,-462.7528 1033,-455.756 1033,-449.2319"/>
+<path fill="none" stroke="#51bf5b" stroke-width="6" d="M1033.2,-469.86C1033.2,-462.94 1033.2,-455.76 1033.2,-449.11"></path>
 </g>
 <!-- E0 -->
 <!-- bridges&#45;&gt;E0 -->
 <g id="edge60" class="edge">
 <title>bridges-&gt;E0</title>
-<path fill="none" stroke="#91b5c9" stroke-width="6" d="M158.2773,-420C170.9426,-420 183.6079,-420 196.2731,-420"/>
-<polygon fill="#91b5c9" stroke="#91b5c9" stroke-width="6" points="196.3169,-422.6251 201.3168,-420 196.3168,-417.3751 196.3169,-422.6251"/>
+<path fill="none" stroke="#91b5c9" stroke-width="6" d="M158.48,-420C170.69,-420 182.91,-420 195.13,-420"></path>
+<polygon fill="#91b5c9" stroke="#91b5c9" stroke-width="6" points="190.06,-422.63 195.06,-420 190.06,-417.38 190.06,-422.63"></polygon>
 </g>
 <!-- logical -->
 <g id="node56" class="node">
 <title>logical</title>
-<polygon fill="#6a9ab1" stroke="#000000" stroke-width="0" points="158,-354 0,-354 0,-282 158,-282 158,-354"/>
-<text text-anchor="middle" x="79" y="-310.8" font-family="Ubuntu" font-size="24.00" fill="#000000">logical</text>
+<polygon fill="#6a9ab1" stroke="black" stroke-width="0" points="158.4,-354 0,-354 0,-282 158.4,-282 158.4,-354"></polygon>
+<text text-anchor="middle" x="79.2" y="-310.8" font-family="Ubuntu" font-size="24.00">logical</text>
 </g>
 <!-- bridges&#45;&gt;logical -->
 <g id="edge61" class="edge">
 <title>bridges-&gt;logical</title>
-<path fill="none" stroke="#91b5c9" stroke-width="6" d="M79,-383.7514C79,-374.1315 79,-363.7455 79,-354.1319"/>
+<path fill="none" stroke="#91b5c9" stroke-width="6" d="M79.2,-383.74C79.2,-374.18 79.2,-363.84 79.2,-354.27"></path>
 </g>
 <!-- F0 -->
 <!-- logical&#45;&gt;F0 -->
 <g id="edge62" class="edge">
 <title>logical-&gt;F0</title>
-<path fill="none" stroke="#6a9ab1" stroke-width="6" d="M158.2773,-318C170.9426,-318 183.6079,-318 196.2731,-318"/>
-<polygon fill="#6a9ab1" stroke="#6a9ab1" stroke-width="6" points="196.3169,-320.6251 201.3168,-318 196.3168,-315.3751 196.3169,-320.6251"/>
+<path fill="none" stroke="#6a9ab1" stroke-width="6" d="M158.48,-318C170.69,-318 182.91,-318 195.13,-318"></path>
+<polygon fill="#6a9ab1" stroke="#6a9ab1" stroke-width="6" points="190.06,-320.63 195.06,-318 190.06,-315.38 190.06,-320.63"></polygon>
 </g>
 <!-- HWI -->
 <g id="node59" class="node">
 <title>HWI</title>
-<polygon fill="#71809b" stroke="#000000" stroke-width="0" points="158,-248 0,-248 0,-176 158,-176 158,-248"/>
-<text text-anchor="middle" x="79" y="-219.2" font-family="Ubuntu" font-size="24.00" fill="#000000">hardware</text>
-<text text-anchor="middle" x="79" y="-190.4" font-family="Ubuntu" font-size="24.00" fill="#000000">interfaces</text>
+<polygon fill="#71809b" stroke="black" stroke-width="0" points="158.4,-248 0,-248 0,-176 158.4,-176 158.4,-248"></polygon>
+<text text-anchor="middle" x="79.2" y="-219.2" font-family="Ubuntu" font-size="24.00">hardware</text>
+<text text-anchor="middle" x="79.2" y="-190.4" font-family="Ubuntu" font-size="24.00">interfaces</text>
 </g>
 <!-- logical&#45;&gt;HWI -->
 <g id="edge63" class="edge">
 <title>logical-&gt;HWI</title>
-<path fill="none" stroke="#6a9ab1" stroke-width="6" d="M79,-281.8173C79,-270.9018 79,-258.9245 79,-248.0196"/>
+<path fill="none" stroke="#6a9ab1" stroke-width="6" d="M79.2,-281.79C79.2,-270.95 79.2,-259.01 79.2,-248.17"></path>
 </g>
 <!-- log_mem&#45;&gt;PA -->
 <g id="edge53" class="edge">
 <title>log_mem-&gt;PA</title>
-<path fill="none" stroke="#51bf5b" stroke-width="6" d="M1033,-281.8173C1033,-270.9018 1033,-258.9245 1033,-248.0196"/>
+<path fill="none" stroke="#51bf5b" stroke-width="6" d="M1033.2,-281.79C1033.2,-270.95 1033.2,-259.01 1033.2,-248.17"></path>
 </g>
 <!-- G0 -->
 <!-- HWI&#45;&gt;G0 -->
 <g id="edge64" class="edge">
 <title>HWI-&gt;G0</title>
-<path fill="none" stroke="#71809b" stroke-width="6" d="M158.2773,-212C170.9426,-212 183.6079,-212 196.2731,-212"/>
-<polygon fill="#71809b" stroke="#71809b" stroke-width="6" points="196.3169,-214.6251 201.3168,-212 196.3168,-209.3751 196.3169,-214.6251"/>
+<path fill="none" stroke="#71809b" stroke-width="6" d="M158.48,-212C170.69,-212 182.91,-212 195.13,-212"></path>
+<polygon fill="#71809b" stroke="#71809b" stroke-width="6" points="190.06,-214.63 195.06,-212 190.06,-209.38 190.06,-214.63"></polygon>
 </g>
 <!-- HW -->
 <g id="node61" class="node">
 <title>HW</title>
-<polygon fill="#777777" stroke="#000000" stroke-width="0" points="158,-158 0,-158 0,-86 158,-86 158,-158"/>
-<text text-anchor="middle" x="79" y="-129.2" font-family="Ubuntu" font-size="24.00" fill="#ffffff">electronics,</text>
-<text text-anchor="middle" x="79" y="-100.4" font-family="Ubuntu" font-size="24.00" fill="#ffffff">hardware</text>
+<polygon fill="#777777" stroke="black" stroke-width="0" points="158.4,-158 0,-158 0,-86 158.4,-86 158.4,-158"></polygon>
+<text text-anchor="middle" x="79.2" y="-129.2" font-family="Ubuntu" font-size="24.00" fill="white">electronics,</text>
+<text text-anchor="middle" x="79.2" y="-100.4" font-family="Ubuntu" font-size="24.00" fill="white">hardware</text>
 </g>
 <!-- HWI&#45;&gt;HW -->
 <g id="edge65" class="edge">
 <title>HWI-&gt;HW</title>
-<path fill="none" stroke="#71809b" stroke-width="6" d="M79,-175.9121C79,-170.0437 79,-163.9646 79,-158.096"/>
+<path fill="none" stroke="#71809b" stroke-width="6" d="M79.2,-175.71C79.2,-169.98 79.2,-164.03 79.2,-158.29"></path>
 </g>
 <!-- H0 -->
 <!-- HW&#45;&gt;H0 -->
 <g id="edge66" class="edge">
 <title>HW-&gt;H0</title>
-<path fill="none" stroke="#777777" stroke-width="6" d="M158.2773,-122C170.9426,-122 183.6079,-122 196.2731,-122"/>
-<polygon fill="#777777" stroke="#777777" stroke-width="6" points="196.3169,-124.6251 201.3168,-122 196.3168,-119.3751 196.3169,-124.6251"/>
+<path fill="none" stroke="#777777" stroke-width="6" d="M158.48,-122C170.69,-122 182.91,-122 195.13,-122"></path>
+<polygon fill="#777777" stroke="#777777" stroke-width="6" points="190.06,-124.63 195.06,-122 190.06,-119.38 190.06,-124.63"></polygon>
 </g>
 <!-- layers&#45;&gt;usr -->
 <g id="edge67" class="edge">
 <title>layers-&gt;usr</title>
-<path fill="none" stroke="#c0c0c0" d="M79,-642.0701C79,-639.3495 79,-636.4567 79,-633.4871"/>
-<polygon fill="#c0c0c0" stroke="#c0c0c0" points="80.7501,-633.0794 79,-628.0794 77.2501,-633.0794 80.7501,-633.0794"/>
+<path fill="none" stroke="gray" d="M79.2,-641.61C79.2,-639.4 79.2,-637.08 79.2,-634.7"></path>
+<polygon fill="gray" stroke="gray" points="80.95,-634.79 79.2,-629.79 77.45,-634.79 80.95,-634.79"></polygon>
 </g>
 <!-- LKD -->
 <g id="node65" class="node">
 <title>LKD</title>
-<text text-anchor="middle" x="699" y="-761.8" font-family="Ubuntu" font-size="40.00" fill="#000000">Linux kernel diagram</text>
+<text text-anchor="middle" x="699.2" y="-762" font-family="Ubuntu" font-size="40.00">Linux kernel diagram</text>
 </g>
 <!-- LKD&#45;&gt;storage -->
 </g>
 </svg>
-</p><div style="page-break-after:always;"></div>
-<h2 class="mume-header" id="flujo-de-trabajo-y-configuraciones">Flujo de trabajo y configuraciones</h2>
-
+</p><p></p>
+<div style="page-break-after:always;"></div>
+<h2 id="flujo-de-trabajo-y-configuraciones">Flujo de trabajo y configuraciones </h2>
 <ol>
 <li>
 <p>Trabajar en una rama con nuestro nombre y asegurarnos que trabajamos en ella.</p>
@@ -1214,20 +982,20 @@ Country: ES
 <p>(Opcional) Arrastrar el issue a la columna In Progress del Kanban.</p>
 </li>
 <li>
-<p>Al finalizar la sesi&#xF3;n:</p>
-<pre data-role="codeBlock" data-info="cmd" class="language-cmd"><code>git add . 
-git commit -m &quot;mensaje&quot;
+<p>Al finalizar la sesión:</p>
+<pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>git add . 
+git commit -m "mensaje"
 git push
 </code></pre></li>
 <li>
-<p>Aqu&#xED; puedo volver al punto 2 y seguir trabajando en el issue.</p>
+<p>Aquí puedo volver al punto 2 y seguir trabajando en el issue.</p>
 </li>
 <li>
-<p>Al finalizar mi trabajo, inicio el proceso de Revisi&#xF3;n/Integraci&#xF3;n.</p>
+<p>Al finalizar mi trabajo, inicio el proceso de Revisión/Integración.</p>
 <ol>
 <li>
-<p>Ejecutar este Wroflow (est&#xE1; en <strong><code>posible_workflow_github.cmd</code></strong>).</p>
-<pre data-role="codeBlock" data-info="cmd" class="language-cmd"><code>git fetch origin
+<p>Ejecutar este Wroflow (está en <strong><code>posible_workflow_github.cmd</code></strong>).</p>
+<pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>git fetch origin
 git merge origin/main
 git push
 
@@ -1239,42 +1007,42 @@ git checkout MI_RAMA
 <li>
 <p>Crear un <strong>Pull Request</strong> al revisor/a/es.</p>
 <ul>
-<li>Se solicitar&#xE1; de la rama con mi nombre sobre el Main o de mi fork sobre el repositorio original.</li>
-<li>Se asignar&#xE1; revisor/a/es.</li>
-<li>Una vez est&#xE9; revisado &apos;mergeado&apos; el pull request en la rama principal cerrar el issue y arrastrarlo a la columna Done del Kanban (opcional).</li>
+<li>Se solicitará de la rama con mi nombre sobre el Main o de mi fork sobre el repositorio original.</li>
+<li>Se asignará revisor/a/es.</li>
+<li>Una vez esté revisado 'mergeado' el pull request en la rama principal cerrar el issue y arrastrarlo a la columna Done del Kanban (opcional).</li>
 </ul>
 </li>
 <li>
-<p>Si solo queremos actualizarnos a como est&#xE9; el main</p>
-<pre data-role="codeBlock" data-info="cmd" class="language-cmd"><code>git checkout main
+<p>Si solo queremos actualizarnos a como esté el main</p>
+<pre data-role="codeBlock" data-info="cmd" class="language-cmd cmd"><code>git checkout main
 git pull
 git checkout MI_RAMA
 git merge main
 </code></pre></li>
 <li>
 <p>Una vez se ejecute el push en la rama main de GitHub se desencadenan las siguientes acciones en <strong><code>.github\workflows\publicar_web_action.yaml</code></strong></p>
-<pre data-role="codeBlock" data-info="yaml" class="language-yaml"><span class="token key atrule">name</span><span class="token punctuation">:</span> PublicaWeb
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">name</span><span class="token punctuation">:</span> PublicaWeb
 
 <span class="token comment"># Al hacerse Push en master</span>
 <span class="token key atrule">on</span><span class="token punctuation">:</span>
 <span class="token key atrule">push</span><span class="token punctuation">:</span>
     <span class="token key atrule">branches</span><span class="token punctuation">:</span> <span class="token punctuation">[</span> master <span class="token punctuation">]</span>
 
-<span class="token comment"># Ejecuta este workflow secuencial (otro job se ejecutar&#xED;a en paralelo)</span>
+<span class="token comment"># Ejecuta este workflow secuencial (otro job se ejecutaría en paralelo)</span>
 <span class="token key atrule">jobs</span><span class="token punctuation">:</span>
 <span class="token comment"># Solo hay un trabajo llamado publica</span>
 <span class="token key atrule">publica</span><span class="token punctuation">:</span>
-    <span class="token comment"># Se ejecuta en una m&#xE1;quina de ubuntu</span>
+    <span class="token comment"># Se ejecuta en una máquina de ubuntu</span>
     <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
 
     <span class="token comment"># Secuencia de pasos</span>
     <span class="token key atrule">steps</span><span class="token punctuation">:</span>
     <span class="token comment"># Hace un un checkout del espacio de trabajo actual ($GITHUB_WORKSPACE) </span>
-    <span class="token comment"># y despu&#xE9;s un checkout a la rama master</span>
+    <span class="token comment"># y después un checkout a la rama master</span>
     <span class="token punctuation">-</span> <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v2
 
     <span class="token comment"># Ejecuta esta lista de comando en un bash de ubuntu donde ...</span>
-    <span class="token comment"># Creo una carpeta a publicar en www eliminando carpetas vac&#xED;as y </span>
+    <span class="token comment"># Creo una carpeta a publicar en www eliminando carpetas vacías y </span>
     <span class="token comment"># solo las extensiones indicadas en rsync_files.txt</span>
     <span class="token comment"># Posteriormente elimino carpetas que no quiero que se publiquen</span>
     <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Crea carpeta a publicar en www
@@ -1282,7 +1050,7 @@ git merge main
         rsync -av --prune-empty-dirs --include-from=rsync_files.txt ./ www/
         rm -Rv www/Examenes
         rm -Rv www/Proyectos
-        rm -Rv www/Bibliograf&#xED;a</span>
+        rm -Rv www/Bibliografía</span>
 
     <span class="token comment"># Publico en la rama main del repositorio donde tengo </span>
     <span class="token comment"># github pages activado el contenido sincronizado en www ...</span>
@@ -1294,8 +1062,8 @@ git merge main
         <span class="token key atrule">publish_branch</span><span class="token punctuation">:</span> main
         <span class="token key atrule">publish_dir</span><span class="token punctuation">:</span> ./www
         <span class="token key atrule">allow_empty_commit</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-</pre><p>Contenido de <strong><code>rsync_files.txt</code></strong> para que se publique solo lo necesario.</p>
-<pre data-role="codeBlock" data-info="txt" class="language-txt"> + */
+</code></pre><p>Contenido de <strong><code>rsync_files.txt</code></strong> para que se publique solo lo necesario.</p>
+<pre data-role="codeBlock" data-info="txt" class="language-txt txt"><code> + */
  + *.html
  + *.pdf
  + *.png
@@ -1305,24 +1073,58 @@ git merge main
  + *_caso_de_estudio.zip
  + *.svg
  - *
-</pre><blockquote>
-<p>&#x1F4CC; <strong>Nota:</strong></p>
+</code></pre></li>
+</ol>
+</li>
+</ol>
+<div style="page-break-after:always;"></div>
+<h2 id="admonition">Admonition </h2>
+<blockquote>
+<p>📌 <strong>Nota:</strong></p>
 <p>Para configurar <strong><code>secrets.DEPLOY_GH_KEY</code></strong></p>
 <ol>
 <li>Ir a <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a> y crear un token de acceso a tus repositorios.</li>
-<li>Ir al repositorio de trabajo <a href="https://URLDeTuRepo/settings/secrets/actions">https://URLDeTuRepo/settings/secrets/actions</a> y a&#xF1;adir un secreto llamado <strong><code>DEPLOY_GH_KEY</code></strong> con el token generado en el paso 1.</li>
+<li>Ir al repositorio de trabajo <a href="https://URLDeTuRepo/settings/secrets/actions">https://URLDeTuRepo/settings/secrets/actions</a> y añadir un secreto llamado <strong><code>DEPLOY_GH_KEY</code></strong> con el token generado en el paso 1.</li>
 </ol>
 </blockquote>
-</li>
+<div class="admonition note">
+<p class="admonition-title">"Nota"</p>
+<p>Para configurar <strong><code>secrets.DEPLOY_GH_KEY</code></strong></p>
+<ol>
+<li>Ir a</li>
 </ol>
-</li>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">"Advertencia"</p>
+<p>Para configurar <strong><code>secrets.DEPLOY_GH_KEY</code></strong></p>
+<ol>
+<li>Ir a</li>
 </ol>
+</div>
+<div style="display: flex; justify-content: space-evenly; align-items: center; margin-top: 15px; margin-bottom: 15px">
+    <img height="200" src="assets/tabs_con_scroll.png">
+    <img height="200" src="assets/tabs_sin_scroll.png">
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px">
+<div style="width: 70%">
+<h3 id="vantajas-1-1">Vantajas 👍 </h3>
+<ul>
+<li>✔️ <strong>Ideal para trabajo en equipo</strong> o en grupo.</li>
+<li>✔️ Homogeneidad en la generación de contenido.</li>
+<li>✔️ Historial y revisión de cambios integrado.</li>
+<li>✔️ <strong>Automatización</strong> en la generación de documentos y despliegue.</li>
+<li>✔️ Permite bifurcaciones.</li>
+<li>✔️ Permite familiarizarse con tecnologías como MarkDown y Git (GitHub) para después aplicarlas con los alumnos en proyectos de grupo o transversales</li>
+</ul>
+</div>
+<div style="width: auto">
+<p align="center" style="zoom:0.8" class="puml"><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="288px" preserveAspectRatio="none" style="width:387px;height:288px;background:#FFFFFF;" version="1.1" viewBox="0 0 387 288" width="387px" zoomAndPan="magnify"><defs></defs><g><rect fill="#FFFAFA" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="75" x="10" y="120.1233"></rect><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="45" x="25" y="148.2551">Debian</text><rect fill="#FFFFFF" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="75" x="145" y="101.0986"></rect><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="45" x="160" y="129.2305">Ubuntu</text><rect fill="#FFFFFF" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="93" x="280" y="25"></rect><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="63" x="295" y="53.1318">Linux Mint</text><path d="M220,124.1479 L230,124.1479 C245,124.1479 255,48.0493 270,48.0493 L280,48.0493 " fill="none" style="stroke:#000000;stroke-width:1.0;"></path><rect fill="#FFFFFF" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="83" x="280" y="101.0986"></rect><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="53" x="295" y="129.2305">Kubuntu</text><path d="M220,124.1479 L230,124.1479 C245,124.1479 255,124.1479 270,124.1479 L280,124.1479 " fill="none" style="stroke:#000000;stroke-width:1.0;"></path><rect fill="#FFFFFF" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="95" x="280" y="177.1973"></rect><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="65" x="295" y="205.3291">KDE Neon</text><path d="M220,124.1479 L230,124.1479 C245,124.1479 255,200.2466 270,200.2466 L280,200.2466 " fill="none" style="stroke:#000000;stroke-width:1.0;"></path><path d="M85,143.1726 L95,143.1726 C110,143.1726 120,124.1479 135,124.1479 L145,124.1479 " fill="none" style="stroke:#000000;stroke-width:1.0;"></path><rect fill="#FFFFFF" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="90" x="145" y="215.2466"></rect><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="60" x="160" y="243.3784">SteamOS</text><path d="M85,143.1726 L95,143.1726 C110,143.1726 120,238.2959 135,238.2959 L145,238.2959 " fill="none" style="stroke:#000000;stroke-width:1.0;"></path><!--SRC=[NL5TJm8n47plhzZ45oJn0qIZ5sCK3Z300V705-F3ShUU6- -sfDVYL_plbWj8i4cRxdHsiZEzBIqQMx2a1IxLTMa_SxfH01iaPCmC5l3j8O0H2oKwrmOMEIPl5TRJOiTO4DmPnlmFYlcBeD6gQj4fRHIsQuffof91utmFZj1aBF_HUstuosjYVfTp9WM9XSGVPFPeRJzItsWdQQUQyVsLBUqOFsgzhqys5bNzwQ0K_VuC8IqOHTNhC5yuiSxVwckhxWCY5bkLGxTx6ePT69EkEc9BM4nYfMx9vxL9KKrp53kFHh0YKxBsXewRfyspuqQprZCCayH2yzIx35fNmNaBEjru1cl2eQhrfoCejJC9GSgbDRnmrYiSgW6k41xy45nG09CboI0SRW7eoegDhg9HWyTeHxXe7RNPGap6pmAFaGhf1LrkVKUYrryGm7pMExfK8vJCOUQrgLGTdw8rdm5qury0]--></g></svg></p></div>
+</div>
+<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
 
       </div>
       
       
-    
-    
     
     
     

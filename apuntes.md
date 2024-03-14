@@ -18,14 +18,14 @@ puppeteer:
     displayHeaderFooter: true
     headerTemplate: "&nbsp;"
     footerTemplate: "
-    <span style=\"font-size: 9pt; display: flex;\">
-        <span class=\"pageNumber\" style=\"margin-left: 1cm;\"></span>
-        /
-        <span class=\"totalPages\"></span>
-        <span class=\"title\" style=\"margin-left: 1cm;\"></span>
-        <span style=\"margin-left: 1cm;\">Juanjo Guarinos</span>
-    </span>
-    "
+        <span style=\"font-size: 9pt; display: flex;\">
+            <span class=\"pageNumber\" style=\"margin-left: 1cm;\"></span>
+            /
+            <span class=\"totalPages\"></span>
+            <span class=\"title\" style=\"margin-left: 1cm;\"></span>
+            <span style=\"margin-left: 1cm;\">Xusa García y Juanjo Guarinos</span>
+        </span>
+                    "
 toc:
     depth_from: 1
     depth_to: 5
@@ -271,7 +271,7 @@ Importar código **renderizado al vuelo** a gráfico vectorial.
         # Al hacerse Push en master
         on:
         push:
-            branches: [ master ]
+            branches: [ main ]
 
         # Ejecuta este workflow secuencial (otro job se ejecutaría en paralelo)
         jobs:
@@ -324,10 +324,72 @@ Importar código **renderizado al vuelo** a gráfico vectorial.
          - *
         ```
 
-        > :pushpin: **Nota:**
-        > 
-        > Para configurar **`secrets.DEPLOY_GH_KEY`**
-        > 1. Ir a https://github.com/settings/tokens y crear un token de acceso a tus repositorios.
-        > 2. Ir al repositorio de trabajo https://URLDeTuRepo/settings/secrets/actions y añadir un secreto llamado **`DEPLOY_GH_KEY`** con el token generado en el paso 1.
+<div style="page-break-after:always;"></div>
+
+## Admonition
+
+> :pushpin: **Nota:**
+> 
+> Para configurar **`secrets.DEPLOY_GH_KEY`**
+> 1. Ir a https://github.com/settings/tokens y crear un token de acceso a tus repositorios.
+> 2. Ir al repositorio de trabajo https://URLDeTuRepo/settings/secrets/actions y añadir un secreto llamado **`DEPLOY_GH_KEY`** con el token generado en el paso 1.
+
+!!! note "Nota"
+    Para configurar **`secrets.DEPLOY_GH_KEY`**
+    1. Ir a
+
+!!! warning "Advertencia"
+    Para configurar **`secrets.DEPLOY_GH_KEY`**
+    1. Ir a
+
+<div style="display: flex; justify-content: space-evenly; align-items: center; margin-top: 15px; margin-bottom: 15px">
+    <img height="200" src="assets/tabs_con_scroll.png">
+    <img height="200" src="assets/tabs_sin_scroll.png">
+</div>
 
 
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px">
+<div style="width: 70%">
+
+### Vantajas :+1: 
+
+* :heavy_check_mark: **Ideal para trabajo en equipo** o en grupo.
+* :heavy_check_mark: Homogeneidad en la generación de contenido.
+* :heavy_check_mark: Historial y revisión de cambios integrado.
+* :heavy_check_mark: **Automatización** en la generación de documentos y despliegue.
+* :heavy_check_mark: Permite bifurcaciones.
+* :heavy_check_mark: Permite familiarizarse con tecnologías como MarkDown y Git (GitHub) para después aplicarlas con los alumnos en proyectos de grupo o transversales
+
+</div>
+<div style="width: auto">
+
+```puml {align="center", style="zoom:0.8"}
+@startmindmap
+<style>
+  mindmapDiagram {
+    Linecolor black
+    FontName Arial
+    FontSize 14
+    node {
+            Padding 15
+            Margin 15
+            HorizontalAlignment center
+            BackGroundColor white
+         }
+  }
+</style>
+
+*[#snow] Debian
+** Ubuntu
+*** Linux Mint
+*** Kubuntu
+*** KDE Neon
+** SteamOS
+
+@endmindmap
+```
+
+</div>
+</div>
+
+Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
