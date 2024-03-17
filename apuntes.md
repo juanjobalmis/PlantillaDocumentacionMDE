@@ -32,8 +32,6 @@ toc:
     ordered: false
 ---
 
-@import "EstilosPersonalizadosMarkdownEnhanced.less"
-
 # Apuntes {ignore=true}
 
 [Descargar estos apuntes](./apuntes.pdf)

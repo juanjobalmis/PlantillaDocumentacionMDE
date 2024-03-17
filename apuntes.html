@@ -15,41 +15,12 @@
 /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
 /* Please visit the URL below for more information: */
 /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
-.markdown-preview.markdown-preview p {
-  text-align: justify;
-}
-
-      </style>
-      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
-  document.addEventListener("DOMContentLoaded", function () {
-    // your code here
-  });
-</script></head><body for="html-export">
-    
-    
-      <div class="crossnote markdown-preview  ">
-      
-<p><style>/* 
-Añade 
-
-@import "../EstilosPersonalizadosMarkdownEnhanced.less"
-
-justo después del front matter 
-*/
-/* Please visit the URL below for more information: */
-/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
-@font-face {
-  font-family: 'Catamaran';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/catamaran/v19/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
-}
-.contenedor {
+.markdown-preview.markdown-preview .contenedor {
   display: flex;
   justify-content: center;
   margin: 30px auto 30px auto;
 }
-.fondo {
+.markdown-preview.markdown-preview .fondo {
   background: url(https://programacioniesbalmis.github.io/Imagenes/BannersMoodle/banner.png);
   background-size: cover;
   width: 75%;
@@ -57,7 +28,7 @@ justo después del front matter
   border-radius: 10px;
   position: relative;
 }
-.cita {
+.markdown-preview.markdown-preview .cita {
   font-family: Arial;
   font-style: italic;
   font-weight: 600;
@@ -72,7 +43,7 @@ justo después del front matter
   font-size: 1.3rem;
   transform: translate(-50%, -50%);
 }
-.abre_comilla {
+.markdown-preview.markdown-preview .abre_comilla {
   font-family: "Catamaran";
   font-weight: 600;
   color: white;
@@ -81,7 +52,7 @@ justo después del front matter
   font-size: 6rem;
   transform: translate(0%, -15%);
 }
-.cierra_comilla {
+.markdown-preview.markdown-preview .cierra_comilla {
   font-family: "Catamaran";
   font-weight: 600;
   color: white;
@@ -91,7 +62,7 @@ justo después del front matter
   font-size: 6rem;
   transform: translate(0%, 55%);
 }
-.autor {
+.markdown-preview.markdown-preview .autor {
   font-family: Arial;
   color: white;
   margin: 0px;
@@ -100,7 +71,17 @@ justo después del front matter
   top: 83%;
   font-size: 1rem;
 }
-</style></p>
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
 <h1 id="apuntes">Apuntes </h1>
 <p><a href="./apuntes.pdf">Descargar estos apuntes</a></p>
 <h2 id="índice">Índice </h2>
@@ -1026,7 +1007,7 @@ git merge main
 <span class="token comment"># Al hacerse Push en master</span>
 <span class="token key atrule">on</span><span class="token punctuation">:</span>
 <span class="token key atrule">push</span><span class="token punctuation">:</span>
-    <span class="token key atrule">branches</span><span class="token punctuation">:</span> <span class="token punctuation">[</span> master <span class="token punctuation">]</span>
+    <span class="token key atrule">branches</span><span class="token punctuation">:</span> <span class="token punctuation">[</span> main <span class="token punctuation">]</span>
 
 <span class="token comment"># Ejecuta este workflow secuencial (otro job se ejecutaría en paralelo)</span>
 <span class="token key atrule">jobs</span><span class="token punctuation">:</span>
