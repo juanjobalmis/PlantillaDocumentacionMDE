@@ -94,7 +94,6 @@
 		],
 		"description": "Tabla con dos imagenes"
 	},
-	
 	"Salto de página en pdf": {
 		"scope": "markdown, md",
 		"prefix": "mde_saltoPagina",
@@ -141,7 +140,7 @@
 			"<!--TODO: $1 -->"
 		],
 		"description": "Comentario con contenido por hacer-"
-	},	
+	},
 	"Código CSharp": {
 		"scope": "markdown, md",
 		"prefix": "mde_bloque_C#",
@@ -198,14 +197,29 @@
 	},
 	"Caso de estudio": {
 		"scope": "markdown, md",
-		"prefix": "mde_cita_caso_de_estudio",
+		"prefix": "mde_caso_de_estudio",
 		"body": [
-			"> :mortar_board: **Caso de estudio:**",
-			"> ",
-			"> $1",
-			"> "
+			"<div class=\"caso_estudio\">",
+			"",
+			":mortar_board: **Caso de estudio:**",
+			"",
+			"$1",
+			"",
+			"</div> <!-- fin caso de estudio -->"
 		],
-		"description": "Cita con caso de estudio"
+		"description": "Caso de estudio"
+	},
+	"Ejercicio": {
+		"scope": "markdown, md",
+		"prefix": "mde_ejercicio",
+		"body": [
+			"<div class=\"ejercicio\">",
+			"",
+			"### :white_check_mark: Ejercicio $1",
+			"",
+			"</div> <!-- fin ejercicio -->"
+		],
+		"description": "Caso de estudio"
 	},
 	"Tips": {
 		"scope": "markdown, md",
@@ -250,7 +264,7 @@
 			"> "
 		],
 		"description": "Cita de peligro"
-	},		
+	},
 	"Icono_buena_práctica": {
 		"scope": "markdown, md",
 		"prefix": "mde_icono_buena_práctica",
@@ -258,7 +272,7 @@
 			":heavy_check_mark: :+1:"
 		],
 		"description": "Icono_buena_práctica"
-	},		
+	},
 	"Icono_mala_práctica": {
 		"scope": "markdown, md",
 		"prefix": "mde_icono_mala_práctica",
@@ -266,5 +280,5 @@
 			":x: :-1:"
 		],
 		"description": "Icono_mala_práctica"
-	}	
+	}
 }
