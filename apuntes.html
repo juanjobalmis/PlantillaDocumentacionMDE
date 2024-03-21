@@ -15,6 +15,31 @@
 /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
 /* Please visit the URL below for more information: */
 /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+@font-face {
+  font-family: 'Catamaran';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/catamaran/v19/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
+}
+.markdown-preview.markdown-preview .caso_estudio {
+  background-color: #f5f5f5;
+  border: 2px solid #969696;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(78, 120, 158, 0.1);
+}
+.markdown-preview.markdown-preview .ejercicio {
+  background-color: #f5faf5;
+  border: 2px solid #969b96;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(78, 120, 158, 0.1);
+}
 .markdown-preview.markdown-preview .contenedor {
   display: flex;
   justify-content: center;
@@ -70,6 +95,45 @@
   position: absolute;
   top: 83%;
   font-size: 1rem;
+}
+.markdown-preview.markdown-preview .flotante {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    flex-direction: column;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    flex-direction: row;
+  }
+}
+.markdown-preview.markdown-preview .flotante_izq {
+  margin-right: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_izq {
+    width: 100%;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_izq {
+    width: auto;
+  }
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_der {
+    width: 100%;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_der {
+    width: auto;
+  }
 }
 
       </style>
@@ -1086,8 +1150,8 @@ git merge main
     <img height="200" src="assets/tabs_con_scroll.png">
     <img height="200" src="assets/tabs_sin_scroll.png">
 </div>
-<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px">
-<div style="width: 70%">
+<div class="flotante" ,="" style="align-items: center;">
+<div class="flotante_izq">
 <h3 id="vantajas-1-1">Vantajas 👍 </h3>
 <ul>
 <li>✔️ <strong>Ideal para trabajo en equipo</strong> o en grupo.</li>
@@ -1098,8 +1162,8 @@ git merge main
 <li>✔️ Permite familiarizarse con tecnologías como MarkDown y Git (GitHub) para después aplicarlas con los alumnos en proyectos de grupo o transversales</li>
 </ul>
 </div>
-<div style="width: auto">
-<p align="center" style="zoom:0.8" class="puml"><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="288px" preserveAspectRatio="none" style="width:387px;height:288px;background:#FFFFFF;" version="1.1" viewBox="0 0 387 288" width="387px" zoomAndPan="magnify"><defs></defs><g><rect fill="#FFFAFA" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="75" x="10" y="120.1233"></rect><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="45" x="25" y="148.2551">Debian</text><rect fill="#FFFFFF" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="75" x="145" y="101.0986"></rect><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="45" x="160" y="129.2305">Ubuntu</text><rect fill="#FFFFFF" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="93" x="280" y="25"></rect><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="63" x="295" y="53.1318">Linux Mint</text><path d="M220,124.1479 L230,124.1479 C245,124.1479 255,48.0493 270,48.0493 L280,48.0493 " fill="none" style="stroke:#000000;stroke-width:1.0;"></path><rect fill="#FFFFFF" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="83" x="280" y="101.0986"></rect><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="53" x="295" y="129.2305">Kubuntu</text><path d="M220,124.1479 L230,124.1479 C245,124.1479 255,124.1479 270,124.1479 L280,124.1479 " fill="none" style="stroke:#000000;stroke-width:1.0;"></path><rect fill="#FFFFFF" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="95" x="280" y="177.1973"></rect><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="65" x="295" y="205.3291">KDE Neon</text><path d="M220,124.1479 L230,124.1479 C245,124.1479 255,200.2466 270,200.2466 L280,200.2466 " fill="none" style="stroke:#000000;stroke-width:1.0;"></path><path d="M85,143.1726 L95,143.1726 C110,143.1726 120,124.1479 135,124.1479 L145,124.1479 " fill="none" style="stroke:#000000;stroke-width:1.0;"></path><rect fill="#FFFFFF" height="46.0986" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:1.5;" width="90" x="145" y="215.2466"></rect><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="60" x="160" y="243.3784">SteamOS</text><path d="M85,143.1726 L95,143.1726 C110,143.1726 120,238.2959 135,238.2959 L145,238.2959 " fill="none" style="stroke:#000000;stroke-width:1.0;"></path><!--SRC=[NL5TJm8n47plhzZ45oJn0qIZ5sCK3Z300V705-F3ShUU6- -sfDVYL_plbWj8i4cRxdHsiZEzBIqQMx2a1IxLTMa_SxfH01iaPCmC5l3j8O0H2oKwrmOMEIPl5TRJOiTO4DmPnlmFYlcBeD6gQj4fRHIsQuffof91utmFZj1aBF_HUstuosjYVfTp9WM9XSGVPFPeRJzItsWdQQUQyVsLBUqOFsgzhqys5bNzwQ0K_VuC8IqOHTNhC5yuiSxVwckhxWCY5bkLGxTx6ePT69EkEc9BM4nYfMx9vxL9KKrp53kFHh0YKxBsXewRfyspuqQprZCCayH2yzIx35fNmNaBEjru1cl2eQhrfoCejJC9GSgbDRnmrYiSgW6k41xy45nG09CboI0SRW7eoegDhg9HWyTeHxXe7RNPGap6pmAFaGhf1LrkVKUYrryGm7pMExfK8vJCOUQrgLGTdw8rdm5qury0]--></g></svg></p></div>
+<div class="flotante_der">
+<p align="center" class="puml"><!--?xml version="1.0" encoding="us-ascii" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" height="172.8px" preserveAspectRatio="none" style="width:232px;height:172px;background:#FFFFFF;" version="1.1" viewBox="0 0 232 172" width="232.2px" zoomAndPan="magnify"><defs></defs><g><rect fill="#FFFAFA" height="27.6592" rx="7.5" ry="7.5" style="stroke:#000000;stroke-width:0.8999999999999999;" width="45" x="6" y="72.074"></rect><text fill="#000000" font-family="Arial" font-size="8.4" lengthAdjust="spacing" textLength="27" x="15" y="88.9531">Debian</text><rect fill="#FFFFFF" height="27.6592" rx="7.5" ry="7.5" style="stroke:#000000;stroke-width:0.8999999999999999;" width="45" x="87" y="60.6592"></rect><text fill="#000000" font-family="Arial" font-size="8.4" lengthAdjust="spacing" textLength="27" x="96" y="77.5383">Ubuntu</text><rect fill="#FFFFFF" height="27.6592" rx="7.5" ry="7.5" style="stroke:#000000;stroke-width:0.8999999999999999;" width="55.8" x="168" y="15"></rect><text fill="#000000" font-family="Arial" font-size="8.4" lengthAdjust="spacing" textLength="37.8" x="177" y="31.8791">Linux Mint</text><path d="M132,74.4888 L138,74.4888 C147,74.4888 153,28.8296 162,28.8296 L168,28.8296 " fill="none" style="stroke:#000000;stroke-width:0.6;"></path><rect fill="#FFFFFF" height="27.6592" rx="7.5" ry="7.5" style="stroke:#000000;stroke-width:0.8999999999999999;" width="49.8" x="168" y="60.6592"></rect><text fill="#000000" font-family="Arial" font-size="8.4" lengthAdjust="spacing" textLength="31.8" x="177" y="77.5383">Kubuntu</text><path d="M132,74.4888 L138,74.4888 C147,74.4888 153,74.4888 162,74.4888 L168,74.4888 " fill="none" style="stroke:#000000;stroke-width:0.6;"></path><rect fill="#FFFFFF" height="27.6592" rx="7.5" ry="7.5" style="stroke:#000000;stroke-width:0.8999999999999999;" width="57" x="168" y="106.3184"></rect><text fill="#000000" font-family="Arial" font-size="8.4" lengthAdjust="spacing" textLength="39" x="177" y="123.1975">KDE Neon</text><path d="M132,74.4888 L138,74.4888 C147,74.4888 153,120.1479 162,120.1479 L168,120.1479 " fill="none" style="stroke:#000000;stroke-width:0.6;"></path><path d="M51,85.9036 L57,85.9036 C66,85.9036 72,74.4888 81,74.4888 L87,74.4888 " fill="none" style="stroke:#000000;stroke-width:0.6;"></path><rect fill="#FFFFFF" height="27.6592" rx="7.5" ry="7.5" style="stroke:#000000;stroke-width:0.8999999999999999;" width="54" x="87" y="129.1479"></rect><text fill="#000000" font-family="Arial" font-size="8.4" lengthAdjust="spacing" textLength="36" x="96" y="146.0271">SteamOS</text><path d="M51,85.9036 L57,85.9036 C66,85.9036 72,142.9775 81,142.9775 L87,142.9775 " fill="none" style="stroke:#000000;stroke-width:0.6;"></path><!--SRC=[NL5TJm8n47plhzZ45oKH0T7enHYL0mrmGZpnnVYmtAtdnjxMz5hm8_vtomKasgHDTpexcPrUL0wjArdo4j-KgZBK1AtciL9dbVlGTAu0rgynOs6nXAy00OnPA3FQM9Xhp5vhR634tM99S6aPzI-KyYT1krlNOd9QAspM5FESfO3sqHyuGLkm_4TlZENFe8dwKdCX9Oc3B1na_z2kWgLhQxpalThZyeKTRHdVQhNF3jOZgiRZJYLc-GGnpHb5DHemctjnFjmQgr7zEoGihYv7VliqYljmIwRkI1rXEKcLkg2GroRHgKPnisGC2x8Lcp1GizFg73RRdTs1PPXa3ZgjC6NKFOsEkj3hf_Um8koftUlf62hZRKQGS-KipxqB2djgY0k4ks22IufWyaOoZ4SR0FgoO6lgQDJm8TaIZhlxL-mW9Hkym4EYOdf6hrteoCpg2oAOtG_sJzGOfV1O16sgL2-awEn71Ftq1m00]--></g></svg></p></div>
 </div>
 <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
 

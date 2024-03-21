@@ -346,8 +346,9 @@ Importar código **renderizado al vuelo** a gráfico vectorial.
 </div>
 
 
-<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px">
-<div style="width: 70%">
+
+<div class="flotante", style="align-items: center;">
+<div class="flotante_izq">
 
 ### Vantajas :+1: 
 
@@ -359,10 +360,13 @@ Importar código **renderizado al vuelo** a gráfico vectorial.
 * :heavy_check_mark: Permite familiarizarse con tecnologías como MarkDown y Git (GitHub) para después aplicarlas con los alumnos en proyectos de grupo o transversales
 
 </div>
-<div style="width: auto">
+<div class="flotante_der">
 
-```puml {align="center", style="zoom:0.8"}
+```puml {align="center"}
 @startmindmap
+
+scale 0.6
+
 <style>
   mindmapDiagram {
     Linecolor black

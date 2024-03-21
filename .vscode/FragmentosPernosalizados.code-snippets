@@ -60,11 +60,11 @@
 		"scope": "markdown, md",
 		"prefix": "mde_imagenFlotanteADerecha",
 		"body": [
-			"<div style=\"display: flex; justify-content: space-between; align-items: center; margin-top: 15px\">",
-			"<div style=\"width: 70%\">",
+			"<div class=\"flotante\", style=\"align-items: center;\">",
+			"<div class=\"flotante_izq\">",
 			"\n<!-- AQUÍ IRÁ TODO EL MARKDOWN FLOTANTE A LA IZQUIERDA DE LA IMAGEN -->\n",
 			"</div>",
-			"<div style=\"width: auto\">",
+			"<div class=\"flotante_der\">",
 			"\t<img height=\"200px\" src=\"$1\" />",
 			"</div>",
 			"</div>"
